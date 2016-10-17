@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="/js/bootstrap3.3.0/css/bootstrap.min.css">
+    <style type="text/css" media="screen">
+        .form-signin{
+            width: 30%;
+            text-align: center;
+            margin: 100px auto 0 auto;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+    </style>    
+</head>
+<body>
+    <div class="container">
+      <!-- 导航条 -->
+      <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="#">厕所在哪后台管系统</a>
+          </div>
+        </div>
+      </nav>
+      <!-- 登录 -->
+      <form class="form-signin" role="form">
+        <h2 class="form-signin-heading">请登录</h2>
+        <input type="text" class="form-control" id="username" placeholder="请输入账号" required autofocus>
+        <input type="password" class="form-control" id="password" placeholder="请输入密码" required>
+        <button class="btn btn-lg btn-primary btn-block" type="button" id="btn">登录</button>
+      </form>
+    </div>
+
+    <script type="text/javascript" src="/js/jquery-2.2.3.min.js"></script>
+    <script src="/js/bootstrap3.3.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $('#btn').on('click', function(){
+            var username = $('#username').val();
+            var password = $('#password').val();
+            var obj = {
+                username: username,
+                password: password
+            };
+            $.ajax({
+                type: 'POST',
+                url: '/data/login',
+                dataType: 'json',
+                data: obj,
+                success: function(data){
+                    if(data.status){
+                        window.location.href = '/';
+                    }else{
+                        alert('登录失败');
+                    }
+                },
+                error: function(){
+                    alert('登录失败');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

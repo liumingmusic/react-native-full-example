@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台管理</title>
+    <style type="text/css" rel="stylesheet">
+        html,body{width:100%;height:100%;margin:0;padding:0;font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
+        .header{height:40px;width:100%;background-color:#242424;position:fixed;}
+        .header_title{line-height:40px;margin-left:60px;color:#fff;font-size:15px;}
+        .header_user{font-size:12px;margin-left:20px;color:#ccc;}
+        .addinfo{width:550px;height:250px;padding-top:100px;margin-left:auto;margin-right:auto;font-size:13px;}
+        .addinfo input{width:450px;height:28px;margin-bottom:10px;outline:none;padding-left:5px;}
+        .addinfo span{display:inline-block;width: 50px;}
+        .addinfo_btn{width:450px;height:35px;text-align:center;line-height:35px;border:1px solid #ccc;margin-left:50px;margin-top:20px;border-radius:5px;}
+        .addinfo_btn:hover{background-color:#36A0FB;color:#fff;border:1px solid #36A0FB;}
+        table{width:1000px;margin-left:auto;margin-right:auto;margin-top:0px;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:50px;table-layout:fixed;}
+        table td{border:1px solid #ddd;padding:0;width:20%;white-space:nowrap;overflow:hidden;word-break:break-all;font-size:12px;font-weight:300;text-overflow: ellipsis;}
+        table tr:hover{background-color:#36A0FB;color:#fff !important;}
+        a{color:#fff;text-decoration:none;}
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header_title"><a href="/">后台管理系统</a><span class="header_user">欢迎你,Admin</span></div>
+    </div>
+    <div classjscss="addinfo" style="padding-top: 70px">
+        <div style="text-align: center;">
+            <span>标题 </span><input id="title" type="text"/>
+        </div>
+        <div style="text-align: center;">
+            <span>图片 </span><input id="img" type="text"/>
+        </div>
+        <div style="text-align: center;">
+            <span>URL </span><input id="url" type="text"/>
+        </div>
+        <div style="text-align: center;" class="addinfo_btn">提交</div>
+    </div>
+
+    <div>
+        <table width="1000">
+            <tr style="text-align:center;font-size:15px;height:30px;color:#fff;background-color:#36A0FB;border:0;">
+                <td style="width:55px">编号</td>
+                <td style="width:100px;">ID</td>
+                <td>标题</td>
+                <td>图片链接</td>
+                <td>URL</td>
+                <td style="width:70px;">时间</td>
+            </tr>
+            <%for(var i in data){%>
+                <tr style="text-align:center;height:26px;color:#4C4C4C;">
+                    <td width="10px;"><%=(parseInt(i)+1)%></td>
+                    <td><%=data[i].id%></td>
+                    <td><%=data[i].title%></td>
+                    <td><%=data[i].img%></td>
+                    <td><%=data[i].url%></td>
+                    <td><%=data[i].time%></td>
+                </tr>
+            <%}%>
+        </table>
+    </div>
+    <script type="text/javascript" src="/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="/js/edit.js"></script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台管理</title>
+    <style type="text/css" rel="stylesheet">
+        html,body{font-size:13px;width:100%;height:100%;margin:0;padding:0;font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
+        .header{height:40px;width:100%;background-color:#242424;position:fixed;}
+        .header_title{line-height:40px;margin-left:60px;color:#fff;font-size:15px;}
+        .header_user{font-size:12px;margin-left:20px;color:#ccc;}
+        .panel{width:606px;margin-left:auto;margin-right:auto;padding-top:60px;}
+        .big_title{font-size:18px;width:600px;border-bottom:1px solid #ddd;color:#D33934;margin-bottom:10px;margin-top:30px;}
+        .small_title{font-size:14px;color:#40ADF9;margin-bottom:5px;margin-top:5px;}
+        input{width:500px;height:28px;border:1px solid #ccc;outline: none;margin-left:5px;padding-left:5px;margin-top:5px;}
+        #submit:hover{background-color:#3B73F1;color:#fff;border:1px solid #3B73F1 !important;}
+        a{color:#fff;text-decoration:none;}
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="header_title"><a href="/">后台管理系统</a><span class="header_user">欢迎你,Admin</span></div>
+</div>
+<div class="panel">
+    <!--推荐专题-->
+    <div style="width:600px;text-align:center;margin-bottom:20px;border:0;color:#211743;font-size:25px;">阅读模块配置</div>
+    <div class="big_title">
+        Step1: 推荐专题
+    </div>
+    <div>
+        <div class="small_title">专题1</div>
+        <div><span>图片链接</span><input id="tuijian_1_img"/></div>
+        <div><span>文章链接</span><input id="tuijian_1_url"/></div>
+        <div><span>文章标题</span><input id="tuijian_1_title"/></div>
+        <div class="small_title">专题2</div>
+        <div><span>图片链接</span><input id="tuijian_2_img"/></div>
+        <div><span>文章链接</span><input id="tuijian_2_url"/></div>
+        <div><span>文章标题</span><input id="tuijian_2_title"/></div>
+    </div>
+    <!--热门推荐-->
+    <div class="big_title">
+        Step2: 热门推荐
+    </div>
+    <div>
+        <div class="small_title">专题1</div>
+        <div><span>图片链接</span><input id="hot_1_img"/></div>
+        <div><span>文章链接</span><input id="hot_1_url"/></div>
+        <div><span>文章标题</span><input id="hot_1_title"/></div>
+        <div class="small_title">专题2</div>
+        <div><span>图片链接</span><input id="hot_2_img"/></div>
+        <div><span>文章链接</span><input id="hot_2_url"/></div>
+        <div><span>文章标题</span><input id="hot_2_title"/></div>
+        <div class="small_title">专题3</div>
+        <div><span>图片链接</span><input id="hot_3_img"/></div>
+        <div><span>文章链接</span><input id="hot_3_url"/></div>
+        <div><span>文章标题</span><input id="hot_3_title"/></div>
+        <div class="small_title">专题4</div>
+        <div><span>图片链接</span><input id="hot_4_img"/></div>
+        <div><span>文章链接</span><input id="hot_4_url"/></div>
+        <div><span>文章标题</span><input id="hot_4_title"/></div>
+        <div class="small_title">专题5</div>
+        <div><span>图片链接</span><input id="hot_5_img"/></div>
+        <div><span>文章链接</span><input id="hot_5_url"/></div>
+        <div><span>文章标题</span><input id="hot_5_title"/></div>
+        <div class="small_title">专题6</div>
+        <div><span>图片链接</span><input id="hot_6_img"/></div>
+        <div><span>文章链接</span><input id="hot_6_url"/></div>
+        <div><span>文章标题</span><input id="hot_6_title"/></div>
+        <div class="small_title">专题7</div>
+        <div><span>图片链接</span><input id="hot_7_img"/></div>
+        <div><span>文章链接</span><input id="hot_7_url"/></div>
+        <div><span>文章标题</span><input id="hot_7_title"/></div>
+        <div class="small_title">专题8</div>
+        <div><span>图片链接</span><input id="hot_8_img"/></div>
+        <div><span>文章链接</span><input id="hot_8_url"/></div>
+        <div><span>文章标题</span><input id="hot_8_title"/></div>
+    </div>
+    <!--分类-->
+    <div class="big_title">
+        Step3: 分类管理
+    </div>
+    <div>
+        <div class="small_title">分类1</div>
+        <div><span>文字</span><input id="category_1_text"/></div>
+
+        <div class="small_title">分类2</div>
+        <div><span>文字</span><input id="category_2_text"/></div>
+
+        <div class="small_title">分类3</div>
+        <div><span>文字</span><input id="category_3_text"/></div>
+
+        <div class="small_title">分类4</div>
+        <div><span>文字</span><input id="category_4_text"/></div>
+    </div>
+    <!--文章欣赏-->
+    <div class="big_title">
+        Step4: 文章欣赏
+    </div>
+    <div>
+        <div class="small_title">专题1</div>
+        <div><span>图片链接</span><input id="page_1_img"/></div>
+        <div><span>文章链接</span><input id="page_1_url"/></div>
+        <div><span>文章标题</span><input id="page_1_title"/></div>
+        <div class="small_title">专题2</div>
+        <div><span>图片链接</span><input id="page_2_img"/></div>
+        <div><span>文章链接</span><input id="page_2_url"/></div>
+        <div><span>文章标题</span><input id="page_2_title"/></div>
+        <div class="small_title">专题3</div>
+        <div><span>图片链接</span><input id="page_3_img"/></div>
+        <div><span>文章链接</span><input id="page_3_url"/></div>
+        <div><span>文章标题</span><input id="page_3_title"/></div>
+        <div class="small_title">专题4</div>
+        <div><span>图片链接</span><input id="page_4_img"/></div>
+        <div><span>文章链接</span><input id="page_4_url"/></div>
+        <div><span>文章标题</span><input id="page_4_title"/></div>
+        <div class="small_title">专题5</div>
+        <div><span>图片链接</span><input id="page_5_img"/></div>
+        <div><span>文章链接</span><input id="page_5_url"/></div>
+        <div><span>文章标题</span><input id="page_5_title"/></div>
+        <div class="small_title">专题6</div>
+        <div><span>图片链接</span><input id="page_6_img"/></div>
+        <div><span>文章链接</span><input id="page_6_url"/></div>
+        <div><span>文章标题</span><input id="page_6_title"/></div>
+        <div class="small_title">专题7</div>
+        <div><span>图片链接</span><input id="page_7_img"/></div>
+        <div><span>文章链接</span><input id="page_7_url"/></div>
+        <div><span>文章标题</span><input id="page_7_title"/></div>
+        <div class="small_title">专题8</div>
+        <div><span>图片链接</span><input id="page_8_img"/></div>
+        <div><span>文章链接</span><input id="page_8_url"/></div>
+        <div><span>文章标题</span><input id="page_8_title"/></div>
+    </div>
+
+    <div id="submit" style="width:600px;height:32px;border:1px solid #ddd;text-align:center;line-height:32px;margin-top: 40px;margin-bottom: 50px;border-radius:4px;">
+        提交
+    </div>
+    <script type="text/javascript" src="/js/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="/js/config.js"></script>
+</div>
+</body>
+</html>
