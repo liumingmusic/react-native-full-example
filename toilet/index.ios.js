@@ -19,6 +19,7 @@ var img4_base64 = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGAAAABgCAQAAAB
 
 export default class toilet extends Component {
 
+    //构造器
     constructor() {
         super();
         this.state = {
