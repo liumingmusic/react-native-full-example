@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
+    WebView
 } from 'react-native';
+//引用自定义组件
+import TWebView from './twebview'
 
 //卫生间模块
 class toiletPage extends Component {
 
     render() {
+        //请求路径
+        var cmapUri = "http://www.baidu.com";
         return (
-            <View>
-                <Text style={styles.text}>卫生间</Text>
+            <View style={styles.container}>
+                <TWebView url={cmapUri}/>
             </View>
         );
     }
@@ -21,11 +25,8 @@ class toiletPage extends Component {
 
 //样式表
 const styles = StyleSheet.create({
-    text: {
-        fontSize:60,
-        color: '#000',
-        margin: 50,
-        textAlign:'center'
+    container: {
+        flex: 1
     }
 });
 
