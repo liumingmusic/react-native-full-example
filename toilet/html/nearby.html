@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="content-language" content="zh-CN"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="x5-orientation" content="portrait">
+    <meta name="full-screen" content="yes">
+    <meta name="x5-fullscreen" content="true">
+    <meta name="browsermode" content="application">
+    <meta name="x5-page-mode" content="app">
+    <meta name="msapplication-tap-highlight" content="no">
+    <title>附近</title>
+    <!--高德地图url-->
+    <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=a876e65cf9a87bb86cc0c3d2d767e7eb"></script>
+    <!--样式控制-->
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+
+        #container {
+            height: 100%;
+            width: 100%;
+        }
+
+        .location-bg {
+            background-color: #fefefe;
+            height: 35px;
+            width: 35px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-top: -60px;
+        }
+
+        .location-bg > img {
+            text-align: center;
+            height: 22px;
+            width: 22px;
+        }
+    </style>
+</head>
+<body>
+<div id="container"></div>
+
+<script>
+    //初始化全局样式
+    var locationIcon = "<div class='location-bg'><img src='./geolocation.png'></div>"
+    //地图初始化
+    var map = new AMap.Map('container', {
+        resizeEnable: true,
+        zoom: 15
+    });
+    //toolbar控件
+    map.plugin(["AMap.ToolBar"], function () {
+        //加载工具条
+        var tool = new AMap.ToolBar();
+        map.addControl(tool);
+    });
+    //定位控件
+    map.plugin('AMap.Geolocation', function () {
+        geolocation = new AMap.Geolocation({
+            enableHighAccuracy: true,//是否使用高精度定位，默认:true
+            timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+            maximumAge: 0,           //定位结果缓存0毫秒，默认：0
+            convert: true,           //自动偏移坐标，偏移后的坐标为高德坐标，默认：true
+            showButton: true,        //显示定位按钮，默认：true
+            buttonPosition: 'LB',    //定位按钮停靠位置，默认：'LB'，左下角
+            buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+            showMarker: true,        //定位成功后在定位到的位置显示点标记，默认：true
+            showCircle: true,        //定位成功后用圆圈表示定位精度范围，默认：true
+            panToLocation: true,     //定位成功后将定位到的位置作为地图中心点，默认：true
+            zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+            buttonDom: locationIcon     //定位样式修改
+        });
+        map.addControl(geolocation);
+        //毁掉函数
+        //AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+        //AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+    });
+    //比例尺控件
+    map.plugin(["AMap.Scale"], function () {
+        var scale = new AMap.Scale();
+        map.addControl(scale);
+    });
+</script>
+</body>
+</html>

@@ -13,7 +13,7 @@ class toiletPage extends Component {
 
     render() {
         //请求路径
-        var cmapUri = "http://www.baidu.com";
+        var cmapUri = "http://localhost:63342/toiletApp/toilet/html/nearby.html";
         return (
             <View style={styles.container}>
                 <TWebView url={cmapUri}/>
