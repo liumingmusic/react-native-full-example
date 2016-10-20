@@ -6,7 +6,7 @@ import {
     WebView
 } from 'react-native';
 //引用自定义组件
-import TWebView from './twebview'
+import TWebView from './twebview';
 
 //卫生间模块
 class toiletPage extends Component {

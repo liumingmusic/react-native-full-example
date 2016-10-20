@@ -1,5 +1,5 @@
 //初始化全局样式
-var locationIcon = "<div class='location-bg'><img src='./geolocation.png'></div>";
+var locationIcon = "<div class='location-bg'><img src='./image/geolocation.png'></div>";
 var isiPhone = navigator.userAgent.toLocaleLowerCase().match(/iPhone/i);
 var walking = null;
 //地图初始化
