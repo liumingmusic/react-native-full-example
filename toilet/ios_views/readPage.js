@@ -1,10 +1,17 @@
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
+    ScrollView
 } from 'react-native';
+
+//导入自定义组件
+import Category from './read/category';
+import List from './read/list';
+import Recommend from './read/recommend';
+import Search from './read/search';
+import Topic from './read/topic';
 
 //阅读模块
 class readPage extends Component {
@@ -12,7 +19,13 @@ class readPage extends Component {
     render() {
         return (
             <View>
-                <Text style={styles.text}>阅读</Text>
+                <Search/>
+                <ScrollView>
+                    <Topic/>
+                    <Recommend/>
+                    <Category/>
+                    <Recommend/>
+                </ScrollView >
             </View>
         );
     }
@@ -22,10 +35,9 @@ class readPage extends Component {
 //样式表
 const styles = StyleSheet.create({
     text: {
-        fontSize:60,
+        fontSize: 60,
         color: 'red',
-        margin: 50,
-        textAlign:'center'
+        textAlign: 'center'
     }
 });
 
