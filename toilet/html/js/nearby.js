@@ -1,6 +1,7 @@
 //初始化全局样式
 var locationIcon = "<div class='location-bg'><img src='./geolocation.png'></div>";
 var isiPhone = navigator.userAgent.toLocaleLowerCase().match(/iPhone/i);
+var walking = null;
 //地图初始化
 var map = new AMap.Map('container', {
     resizeEnable: true,
@@ -17,13 +18,6 @@ map.plugin(["AMap.ToolBar"], function () {
 map.plugin(["AMap.Scale"], function () {
     var scale = new AMap.Scale();
     map.addControl(scale);
-});
-
-//路径规划
-AMap.service('AMap.Walking', function () {
-    walking = new AMap.Walking({
-        map: map
-    });
 });
 
 //定位控件
@@ -43,6 +37,8 @@ map.plugin('AMap.Geolocation', function () {
         buttonDom: locationIcon     //定位样式修改
     });
     map.addControl(geolocation);
+    //页面打开默认调用定位功能
+    geolocation.getCurrentPosition();
     //回调函数
     AMap.event.addListener(geolocation, 'complete', function (data) {
         map.clearMap();
@@ -55,6 +51,14 @@ map.plugin('AMap.Geolocation', function () {
     });
     AMap.event.addListener(geolocation, 'error', function () {
         alert("定位失败，请开启定位服务：设置 -> 隐私 -> 定位服务 -> 小明找厕所 -> 使用定位期间打开");
+    });
+});
+
+//路径规划,使用服务组件
+AMap.service('AMap.Walking', function () {
+    //创建路径对象进行规划
+    walking = new AMap.Walking({
+        map: map
     });
 });
 
@@ -81,17 +85,18 @@ function searchNearBy(center) {
                     //显示标注的点
                     var divStr = '<div class="makerStyle">' + poi.distance + '米</div>';
                     //详细信息的弹框
-                    var info = '<div class="infoWindow"><div class="info_title">卫生间</div>'
-                        + '<div class="info_name">名称: ' + poi.name + '</div>'
-                        + '<div class="info_dis">距您: ' + '<span class="dis_span">' + poi.distance + '米</span>' + '</div>'
-                        + '<div class="info_address">地址: ' + poi.address + '</div>'
-                        + '<div class="info_type">类型: ' + (poi.type || '卫生间') + '</div>'
-                        + '<div class="info_arrow"></div>';
+                    var info = [
+                        '<div class="infoWindow"><div class="info_title">卫生间</div>',
+                        '<div class="info_name">名称: ' + poi.name + '</div>',
+                        '<div class="info_dis">距您: ' + '<span class="dis_span">' + poi.distance + '米</span>' + '</div>',
+                        '<div class="info_address">地址: ' + poi.address + '</div>',
+                        '<div class="info_type">类型: ' + (poi.type || '卫生间') + '</div>',
+                        '<div class="info_arrow"></div>'].join("");
                     //由于iphone点击比较慢，所以特殊处理
                     if (isiPhone && isiPhone.length) {
-                        info += '<div class="info_close" ontouchstart="_closeInfoWindow()"><img src="close_blue.png" style=""/></div></div>';
+                        info += '<div class="info_close" ontouchstart="_closeInfoWindow()">×</div></div>';
                     } else {
-                        info += '<div class="info_close" onclick="_closeInfoWindow()"><img src="close_blue.png" style=""/></div></div>';
+                        info += '<div class="info_close" onclick="_closeInfoWindow()">×</div></div>';
                     }
                     //创建marker图标
                     var marker = new AMap.Marker({
@@ -101,7 +106,7 @@ function searchNearBy(center) {
                         content: divStr,
                         offset: new AMap.Pixel(10, -25)
                     });
-                    //由于iphone点击比较慢，所以特殊处理，事件监听
+                    //由于iphone点击比较慢，所以特殊处理，对marker进行事件监听
                     if (isiPhone && isiPhone.length) {
                         AMap.event.addListener(marker, 'touchstart', function () {
                             _showInfoWindow(info, poi, center);
