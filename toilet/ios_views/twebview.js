@@ -10,6 +10,7 @@ import {
 class TWebView extends Component {
 
     constructor(props) {
+        //父子之间传递参数
         super(props);
         this.state = {
             url: this.props.url,

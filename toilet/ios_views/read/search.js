@@ -3,15 +3,18 @@ import {
     StyleSheet,
     Text,
     View,
+    TextInput
 } from 'react-native';
+
+import Uitls from '../../common/utils'
 
 //阅读模块
 class search extends Component {
 
     render() {
         return (
-            <View>
-                <Text style={styles.text}>搜索</Text>
+            <View style={styles.container}>
+                <TextInput style={styles.search_input} placeholder="搜索" placeholderTextColor="#5e6877"/>
             </View>
         );
     }
@@ -20,10 +23,18 @@ class search extends Component {
 
 //样式表
 const styles = StyleSheet.create({
-    text: {
-        fontSize: 60,
-        color: 'red',
-        textAlign: 'center'
+    search_input: {
+        height: 35,
+        borderWidth: Uitls.pixel,
+        borderColor: "#EEE",
+        paddingLeft: 5,
+        borderRadius: 3,
+        fontSize: 15
+    },
+    container: {
+        paddingLeft: 10,
+        paddingRight: 10,
+        marginTop: 20
     }
 });
 

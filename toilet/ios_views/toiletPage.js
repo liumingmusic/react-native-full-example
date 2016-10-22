@@ -12,7 +12,7 @@ import TWebView from './twebview';
 class toiletPage extends Component {
 
     render() {
-        //请求路径
+        //单独的页面，专门处理地图相关操作
         var cmapUri = "http://localhost:63342/toiletApp/toilet/html/nearby.html";
         return (
             <View style={styles.container}>
