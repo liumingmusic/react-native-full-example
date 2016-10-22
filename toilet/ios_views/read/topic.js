@@ -55,8 +55,7 @@ const styles = StyleSheet.create({
     text_more: {
         fontSize: 13,
         color: "#ccc",
-        marginTop: 10,
-        marginBottom: 10
+        marginTop: 10
     },
     text_img: {
         height: 80,
@@ -67,7 +66,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     view_item: {
-        flex: 1
+        flex: 1,
+        alignItems: "center"
     },
     view_item_left: {
         marginRight: 5

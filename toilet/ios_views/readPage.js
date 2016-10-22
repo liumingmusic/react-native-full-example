@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Text,
     View,
-    ScrollView
+    ScrollView,
+    NavigatorIOS
 } from 'react-native';
 //工具类
 import Uitls from '../common/utils'
@@ -29,7 +30,7 @@ class Hr extends Component {
 }
 
 //阅读模块
-class readPage extends Component {
+class readView extends Component {
 
     constructor() {
         super();
@@ -46,10 +47,13 @@ class readPage extends Component {
                 <Hr/>
                 {
                     this.state.isShow ?
-                        <ScrollView style={styles.view}>
+                        <ScrollView style={styles.scrollView}>
                             <Topic/>
+                            <Hr/>
                             <Recommend/>
+                            <Hr/>
                             <Category/>
+                            <Hr/>
                             <Recommend/>
                         </ScrollView >
                         :
@@ -64,13 +68,29 @@ class readPage extends Component {
         this.setState({
             isShow: true
         })
-
     }
+}
 
+//nav 组件，包裹在readview里面，对全部的信息进行路径导航
+class readPage extends Component {
+    render() {
+        return (
+            <NavigatorIOS
+                initialRoute={{
+                    component: readView,
+                    title: '阅读',
+                    navigationBarHidden:true
+                }}
+                style={{flex: 1}}/>
+        );
+    }
 }
 
 //样式表
 const styles = StyleSheet.create({
+    scrollView: {
+        flex: 1
+    },
     container: {
         flex: 1
     },
