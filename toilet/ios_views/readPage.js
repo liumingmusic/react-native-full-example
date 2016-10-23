@@ -4,7 +4,8 @@ import {
     Text,
     View,
     ScrollView,
-    NavigatorIOS
+    NavigatorIOS,
+    RefreshControl
 } from 'react-native';
 //工具类
 import Uitls from '../common/utils'
@@ -15,7 +16,6 @@ import List from './read/list';
 import Recommend from './read/recommend';
 import Search from './read/search';
 import Topic from './read/topic';
-
 
 //hr组件，画出一条线
 class Hr extends Component {
@@ -36,7 +36,8 @@ class readView extends Component {
         super();
         //默认不显示 ScrollView
         this.state = {
-            isShow: false
+            isShow: false,
+            refreshing: false
         }
     }
 
@@ -47,7 +48,14 @@ class readView extends Component {
                 <Hr/>
                 {
                     this.state.isShow ?
-                        <ScrollView style={styles.scrollView}>
+                        <ScrollView
+                            style={styles.scrollView}
+                            refreshControl={
+                                <RefreshControl
+                                    refreshing={this.state.refreshing}
+                                    onRefresh={this._onRefresh.bind(this)}
+                                />
+                            }>
                             <Topic data={this.state.recommendTopic} navigator={this.props.navigator}/>
                             <Hr/>
                             <Recommend name="热门推荐" data={this.state.hotTopic} navigator={this.props.navigator}/>
@@ -64,8 +72,14 @@ class readView extends Component {
         );
     }
 
-    //组件加载完毕时候调用 TODO fatch数据
-    componentDidMount() {
+    //下拉刷新
+    _onRefresh() {
+        var that = this;
+        that.setState({refreshing: true});
+        that._fetchData();
+    }
+
+    _fetchData(callback) {
         var that = this;
         var url = "http://123.57.39.116:3000/data/read?type=config";
         Uitls.ajax(url, function (data) {
@@ -85,6 +99,11 @@ class readView extends Component {
         }, function (err) {
             alert('服务异常,正在紧急修复,请耐心等待2');
         })
+    }
+
+    //组件加载完毕时候调用 TODO fatch数据
+    componentDidMount() {
+        this._fetchData();
     }
 }
 

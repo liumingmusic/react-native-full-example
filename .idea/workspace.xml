@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="568d23b8-3c2c-41c3-8111-6b1ea9b9c1e0" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/read/list.js" afterPath="$PROJECT_DIR$/toilet/ios_views/read/list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/readPage.js" afterPath="$PROJECT_DIR$/toilet/ios_views/readPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/read/recommend.js" afterPath="$PROJECT_DIR$/toilet/ios_views/read/recommend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/read/topic.js" afterPath="$PROJECT_DIR$/toilet/ios_views/read/topic.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/twebview.js" afterPath="$PROJECT_DIR$/toilet/ios_views/twebview.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="toiletApp.iws" />
@@ -56,11 +52,11 @@
         <option value="$PROJECT_DIR$/service/public/data/config.json" />
         <option value="$PROJECT_DIR$/toilet/common/utils.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/read/category.js" />
-        <option value="$PROJECT_DIR$/toilet/ios_views/readPage.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/twebview.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/read/recommend.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/read/topic.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/read/list.js" />
+        <option value="$PROJECT_DIR$/toilet/ios_views/readPage.js" />
       </list>
     </option>
   </component>
@@ -114,6 +110,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toilet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toilet" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ios_views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -278,7 +306,13 @@
       <option name="project" value="LOCAL" />
       <updated>1477216583276</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="阅读模块完成">
+      <created>1477218453797</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1477218453797</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -333,7 +367,8 @@
     <MESSAGE value="分类组件开发完成。。" />
     <MESSAGE value="所有组件的数据渲染，" />
     <MESSAGE value="list组件开发，完成列表数据渲染。" />
-    <option name="LAST_COMMIT_MESSAGE" value="list组件开发，完成列表数据渲染。" />
+    <MESSAGE value="阅读模块完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="阅读模块完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -385,8 +420,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#Hr#0" expanded="false" />
-            <element signature="e#2892#3223#0" expanded="false" />
+            <element signature="e#3467#3798#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -556,17 +590,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toilet/ios_views/readPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72649574">
-          <caret line="56" column="107" selection-start-line="56" selection-start-column="107" selection-end-line="56" selection-end-column="107" />
-          <folding>
-            <element signature="n#Hr#0" expanded="false" />
-            <element signature="e#2892#3223#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/toilet/ios_views/twebview.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -596,6 +619,16 @@
         <state vertical-scroll-proportion="0.21367522">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="38" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toilet/ios_views/readPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.44444445">
+          <caret line="77" column="42" selection-start-line="77" selection-start-column="42" selection-end-line="77" selection-end-column="42" />
+          <folding>
+            <element signature="e#3467#3798#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
