@@ -32,12 +32,16 @@ class list extends Component {
                     enableEmptySections={true}
                     dataSource={this.state.dataSource}
                     renderRow={(rowData) =>
-                        <TouchableOpacity style={styles.item} onPress={this._showDetail.bind(this,rowData.url,rowData.title)}>
+                        <TouchableOpacity
+                            style={styles.item}
+                            onPress={this._showDetail.bind(this,rowData.url,rowData.title)}
+                        >
                             <View>
                                 <Image
-                                style={styles.img}
-                                resizeMode="cover"
-                                source={{uri:rowData.img}}/>
+                                    style={styles.img}
+                                    resizeMode="cover"
+                                    source={{uri:rowData.img}}
+                                />
                             </View>
                             <View style={styles.warper}>
                                 <Text style={styles.title} numberOfLines={1}>{rowData.title}</Text>
@@ -53,13 +57,14 @@ class list extends Component {
     _showDetail(url, name) {
         //路由跳转
         this.props.navigator.push({
-            component: TWebView,
-            title: name,
-            titleTextColor: "#000",
-            tintColor: "#000",
-            barTintColor: "#fff",
-            passProps: {url: url, isMargin: 1}//路由传递数据
-        });
+                component: TWebView,
+                title: name,
+                barTintColor: "#fff",
+                passProps: {
+                    url: url, isMargin: 1
+                }//路由传递数据
+            }
+        );
     }
 
     //页面渲染完成请求数据

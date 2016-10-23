@@ -61,8 +61,6 @@ class category extends Component {
         this.state.navigator.push({
             component: List,
             title: name,
-            titleTextColor: "#000",
-            tintColor: "#000",
             barTintColor: "#fff",
             passProps: {url: url}//路由传递数据
         });

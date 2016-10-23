@@ -44,7 +44,7 @@ class readView extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Search/>
+                <Search navigator={this.props.navigator}/>
                 <Hr/>
                 {
                     this.state.isShow ?
@@ -53,6 +53,7 @@ class readView extends Component {
                             refreshControl={
                                 <RefreshControl
                                     refreshing={this.state.refreshing}
+                                    title="数据在加载中..."
                                     onRefresh={this._onRefresh.bind(this)}
                                 />
                             }>
@@ -76,7 +77,10 @@ class readView extends Component {
     _onRefresh() {
         var that = this;
         that.setState({refreshing: true});
-        that._fetchData();
+        setTimeout(function () {
+            that._fetchData();
+        }, 3000)
+
     }
 
     _fetchData(callback) {

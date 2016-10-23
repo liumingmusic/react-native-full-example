@@ -26,7 +26,10 @@ class topic extends Component {
         var data = this.state.data;
         for (var i in data) {
             views.push(
-                <TouchableOpacity style={[styles.view_item,styles.view_item_left]} key={i} onPress={this._showDetail.bind(this,data[i].url,data[i].title)}>
+                <TouchableOpacity
+                    style={[styles.view_item,styles.view_item_left]}
+                    key={i}
+                    onPress={this._showDetail.bind(this,data[i].url,data[i].title)}>
                     <Image
                         style={styles.text_img}
                         resizeMode="cover"
@@ -55,9 +58,8 @@ class topic extends Component {
         this.props.navigator.push({
             component: TWebView,
             title: name,
-            titleTextColor: "#000",
-            tintColor: "#000",
             barTintColor: "#fff",
+            interactivePopGestureEnabled: true,
             passProps: {url: url, isMargin: 1}//路由传递数据
         });
     }

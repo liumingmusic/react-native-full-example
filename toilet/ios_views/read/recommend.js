@@ -65,8 +65,6 @@ class recommend extends Component {
         this.props.navigator.push({
             component: TWebView,
             title: name,
-            titleTextColor: "#000",
-            tintColor: "#000",
             barTintColor: "#fff",
             passProps: {url: url, isMargin: 1}//路由传递数据
         });

@@ -6,17 +6,43 @@ import {
     TextInput
 } from 'react-native';
 
+//公共组件
 import Uitls from '../../common/utils'
-
+//list组件
+import List from './list'
 //搜索组件
 class search extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            navigator: props.navigator
+        }
+    }
 
     render() {
         return (
             <View style={styles.container}>
-                <TextInput style={styles.search_input} placeholder="搜索" placeholderTextColor="#5e6877"/>
+                <TextInput
+                    style={styles.search_input}
+                    placeholder="搜索"
+                    onSubmitEditing={(event) => {
+                        this._search(event.nativeEvent.text);
+                    }}
+                    placeholderTextColor="#5e6877"/>
             </View>
         );
+    }
+
+    //数据搜索
+    _search(text) {
+        let url = 'http://123.57.39.116:3000/data/read?type=it';
+        //路由跳转
+        this.state.navigator.push({
+            component: List,
+            barTintColor: "#fff",
+            passProps: {url: url}//路由传递数据
+        });
     }
 
 }
