@@ -11,25 +11,33 @@ import Uitls from '../../common/utils'
 //推荐专题组件
 class topic extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: props.data
+        }
+    }
+
     render() {
+        var views = [];
+        var data = this.state.data;
+        for (var i in data) {
+            views.push(
+                <View style={[styles.view_item,styles.view_item_left]} key={i}>
+                    <Image
+                        style={styles.text_img}
+                        resizeMode="cover"
+                        source={{uri:data[i].img}}/>
+                </View>
+            )
+        }
         return (
             <View style={styles.container}>
                 <View>
                     <Text style={styles.text_title}>推荐专题</Text>
                 </View>
                 <View style={styles.view_img}>
-                    <View style={[styles.view_item,styles.view_item_left]}>
-                        <Image
-                            style={styles.text_img}
-                            resizeMode="cover"
-                            source={{uri:"http://img04.meituncdn.com/group1/M00/C0/BA/wKgyOlcLlPuAc67MAAA_RkDApWQ109_340.jpg"}}/>
-                    </View>
-                    <View style={[styles.view_item,styles.view_item_right]}>
-                        <Image
-                            style={styles.text_img}
-                            resizeMode="cover"
-                            source={{uri:"http://img04.meituncdn.com/group1/M00/C0/BA/wKgyOlcLlPuAc67MAAA_RkDApWQ109_340.jpg"}}/>
-                    </View>
+                    {views}
                 </View>
                 <View>
                     <Text style={styles.text_more}>查看更多同期专题 &gt;</Text>
@@ -44,8 +52,7 @@ class topic extends Component {
 const styles = StyleSheet.create({
     container: {
         paddingLeft: 10,
-        paddingRight: 10,
-        marginTop: -20
+        paddingRight: 10
     },
     text_title: {
         fontSize: 14,

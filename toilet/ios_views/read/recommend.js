@@ -12,47 +12,43 @@ import Uitls from '../../common/utils'
 //推荐组件
 class recommend extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: props.data,
+            name: props.name
+        }
+    }
+
     render() {
+        var view_top = [];
+        var view_bottom = [];
+        var data = this.state.data;
+        for (var i in data) {
+            let view = (
+                <View style={[styles.img_item]} key={i}>
+                    <Image style={[styles.img,styles.img_item_shadow]}
+                           resizeMode="cover"
+                           source={{uri:data[i].img}}/>
+                    <Text style={styles.img_title} numberOfLines={2}>{data[i].title}</Text>
+                </View>
+            );
+            if (i < 4) {
+                view_top.push(view);
+            } else {
+                view_bottom.push(view);
+            }
+        }
         return (
             <View style={styles.container}>
                 <View>
-                    <Text style={styles.text_title}>热门推荐</Text>
+                    <Text style={styles.text_title}>{this.state.name}</Text>
                 </View>
                 <View style={styles.img_view}>
-                    <View style={[styles.img_item]}>
-                        <Image style={[styles.img,styles.img_item_shadow]} resizeMode="cover" source={{uri:"http://image87.360doc.com/DownloadImg/2015/08/0100/56645096_7.jpg"}}/>
-                        <Text style={styles.img_title} numberOfLines={2}>标题信息标题信息标题信息标题信息标题信息标题信息</Text>
-                    </View>
-                    <View style={[styles.img_item]}>
-                        <Image style={[styles.img,styles.img_item_shadow]} resizeMode="cover" source={{uri:"http://image87.360doc.com/DownloadImg/2015/08/0100/56645096_7.jpg"}}/>
-                        <Text style={styles.img_title} numberOfLines={2}>标题信息</Text>
-                    </View>
-                    <View style={[styles.img_item]}>
-                        <Image style={[styles.img,styles.img_item_shadow]} resizeMode="cover" source={{uri:"http://image87.360doc.com/DownloadImg/2015/08/0100/56645096_7.jpg"}}/>
-                        <Text style={styles.img_title} numberOfLines={2}>标题信息</Text>
-                    </View>
-                    <View style={[styles.img_item]}>
-                        <Image style={[styles.img,styles.img_item_shadow]} resizeMode="cover" source={{uri:"http://image87.360doc.com/DownloadImg/2015/08/0100/56645096_7.jpg"}}/>
-                        <Text style={styles.img_title} numberOfLines={2}>标题信息</Text>
-                    </View>
+                    {view_top}
                 </View>
                 <View style={styles.img_view}>
-                    <View style={[styles.img_item]}>
-                        <Image style={[styles.img,styles.img_item_shadow]} resizeMode="cover" source={{uri:"http://image87.360doc.com/DownloadImg/2015/08/0100/56645096_7.jpg"}}/>
-                        <Text style={styles.img_title} numberOfLines={2}>标题信息</Text>
-                    </View>
-                    <View style={[styles.img_item]}>
-                        <Image style={[styles.img,styles.img_item_shadow]} resizeMode="cover" source={{uri:"http://image87.360doc.com/DownloadImg/2015/08/0100/56645096_7.jpg"}}/>
-                        <Text style={styles.img_title} numberOfLines={2}>标题信息</Text>
-                    </View>
-                    <View style={[styles.img_item]}>
-                        <Image style={[styles.img,styles.img_item_shadow]} resizeMode="cover" source={{uri:"http://image87.360doc.com/DownloadImg/2015/08/0100/56645096_7.jpg"}}/>
-                        <Text style={styles.img_title} numberOfLines={2}>标题信息</Text>
-                    </View>
-                    <View style={[styles.img_item]}>
-                        <Image style={[styles.img,styles.img_item_shadow]} resizeMode="cover" source={{uri:"http://image87.360doc.com/DownloadImg/2015/08/0100/56645096_7.jpg"}}/>
-                        <Text style={styles.img_title} numberOfLines={2}>标题信息</Text>
-                    </View>
+                    {view_bottom}
                 </View>
                 <View>
                     <Text style={styles.text_more}>查看全部 &gt;</Text>

@@ -11,27 +11,39 @@ import Uitls from '../../common/utils'
 //分类组件
 class category extends Component {
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            data: props.data
+        }
+    }
+
     render() {
+        var view_top = [];
+        var view_bottom = [];
+        var data = this.state.data;
+        for (var i in data) {
+            let view = (
+                <View style={styles.cat_item} key={i}>
+                    <Text style={styles.cat_title}>{data[i].text}</Text>
+                </View>
+            );
+            if (i < 2) {
+                view_top.push(view);
+            } else {
+                view_bottom.push(view);
+            }
+        }
         return (
             <View style={styles.container}>
                 <View>
                     <Text style={styles.text_title}>分类</Text>
                 </View>
                 <View style={styles.cat_view}>
-                    <View style={styles.cat_item}>
-                        <Text style={styles.cat_title}>互联网</Text>
-                    </View>
-                    <View style={styles.cat_item}>
-                        <Text style={styles.cat_title}>散文</Text>
-                    </View>
+                    {view_top}
                 </View>
                 <View style={styles.cat_view}>
-                    <View style={styles.cat_item}>
-                        <Text style={styles.cat_title}>笑话</Text>
-                    </View>
-                    <View style={styles.cat_item}>
-                        <Text style={styles.cat_title}>管理</Text>
-                    </View>
+                    {view_bottom}
                 </View>
             </View>
         );
@@ -65,10 +77,12 @@ const styles = StyleSheet.create({
         color: '#5e5e5e',
         marginBottom: 10
     },
-    cat_title:{
+    cat_title: {
         fontSize: 17,
-        color:"#707070"
+        color: "#707070"
     }
 });
+
+//redux 全局数据框架状态
 
 module.exports = category;

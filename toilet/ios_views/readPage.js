@@ -48,13 +48,14 @@ class readView extends Component {
                 {
                     this.state.isShow ?
                         <ScrollView style={styles.scrollView}>
-                            <Topic/>
+                            <Topic data={this.state.recommendTopic}/>
                             <Hr/>
-                            <Recommend/>
+                            <Recommend name="热门推荐" data={this.state.hotTopic}/>
                             <Hr/>
-                            <Category/>
+                            <Category data={this.state.category}/>
                             <Hr/>
-                            <Recommend/>
+                            <Recommend name="轻松一刻" data={this.state.other}/>
+                            <Text style={{height:70}}></Text>
                         </ScrollView >
                         :
                         <Text>没有数据显示</Text>
@@ -65,8 +66,24 @@ class readView extends Component {
 
     //组件加载完毕时候调用 TODO fatch数据
     componentDidMount() {
-        this.setState({
-            isShow: true
+        var that = this;
+        var url = "http://123.57.39.116:3000/data/read?type=config";
+        Uitls.ajax(url, function (data) {
+            if (data.status === 1) {
+                let obj = data.data;
+                that.setState({
+                    isShow: true,
+                    recommendTopic: obj.recommendTopic,
+                    hotTopic: obj.hotTopic,
+                    category: obj.category,
+                    other: obj.other,
+                    refreshing: false
+                });
+            } else {
+                alert('服务异常,正在紧急修复,请耐心等待1');
+            }
+        }, function (err) {
+            alert('服务异常,正在紧急修复,请耐心等待2');
         })
     }
 }
