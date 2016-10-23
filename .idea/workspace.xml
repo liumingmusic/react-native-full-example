@@ -3,10 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="568d23b8-3c2c-41c3-8111-6b1ea9b9c1e0" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/read/category.js" afterPath="$PROJECT_DIR$/toilet/ios_views/read/category.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/public/data/config.json" afterPath="$PROJECT_DIR$/service/public/data/config.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/read/list.js" afterPath="$PROJECT_DIR$/toilet/ios_views/read/list.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/readPage.js" afterPath="$PROJECT_DIR$/toilet/ios_views/readPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/read/recommend.js" afterPath="$PROJECT_DIR$/toilet/ios_views/read/recommend.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/ios_views/read/topic.js" afterPath="$PROJECT_DIR$/toilet/ios_views/read/topic.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="toiletApp.iws" />
@@ -52,15 +50,15 @@
         <option value="$PROJECT_DIR$/toilet/ios_views/twebview.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/toiletPage.js" />
         <option value="$PROJECT_DIR$/toilet/html/css/nearby.css" />
-        <option value="$PROJECT_DIR$/toilet/ios_views/read/list.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/read/search.js" />
         <option value="$PROJECT_DIR$/toilet/html/js/nearby.js" />
         <option value="$PROJECT_DIR$/service/public/data/config.json" />
         <option value="$PROJECT_DIR$/toilet/common/utils.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/read/topic.js" />
-        <option value="$PROJECT_DIR$/toilet/ios_views/read/category.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/read/recommend.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/readPage.js" />
+        <option value="$PROJECT_DIR$/toilet/ios_views/read/category.js" />
+        <option value="$PROJECT_DIR$/toilet/ios_views/read/list.js" />
       </list>
     </option>
   </component>
@@ -298,7 +296,13 @@
       <option name="project" value="LOCAL" />
       <updated>1477194619873</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="所有组件的数据渲染，">
+      <created>1477207308791</created>
+      <option name="number" value="00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1477207308791</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -314,7 +318,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16759333" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16759333" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32876712" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -351,7 +355,8 @@
     <MESSAGE value="推荐专题模块书写" />
     <MESSAGE value="热门推荐专题" />
     <MESSAGE value="分类组件开发完成。。" />
-    <option name="LAST_COMMIT_MESSAGE" value="分类组件开发完成。。" />
+    <MESSAGE value="所有组件的数据渲染，" />
+    <option name="LAST_COMMIT_MESSAGE" value="所有组件的数据渲染，" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -402,7 +407,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="n#Hr#0" expanded="false" />
+            <element signature="e#2793#3124#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -539,14 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toilet/ios_views/read/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.14914773">
-          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/toilet/html/nearby.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.625">
@@ -571,14 +571,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toilet/common/utils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.72649574">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/toilet/ios_views/read/topic.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.36182335">
@@ -587,27 +579,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toilet/ios_views/read/recommend.js">
+    <entry file="file://$PROJECT_DIR$/toilet/ios_views/read/category.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42735043">
-          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.97863245">
+          <caret line="90" column="20" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toilet/ios_views/read/category.js">
+    <entry file="file://$PROJECT_DIR$/toilet/common/utils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34188035">
-          <caret line="32" column="20" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="4" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toilet/ios_views/read/list.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.081196584">
+          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/toilet/ios_views/read/recommend.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2777778">
+          <caret line="32" column="64" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="64" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/toilet/ios_views/readPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44444445">
-          <caret line="57" column="51" selection-start-line="57" selection-start-column="51" selection-end-line="57" selection-end-column="51" />
-          <folding />
+        <state vertical-scroll-proportion="0.2991453">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+          <folding>
+            <element signature="n#Hr#0" expanded="false" />
+            <element signature="e#2793#3124#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

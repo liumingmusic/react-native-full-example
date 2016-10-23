@@ -52,7 +52,7 @@ class readView extends Component {
                             <Hr/>
                             <Recommend name="热门推荐" data={this.state.hotTopic}/>
                             <Hr/>
-                            <Category data={this.state.category}/>
+                            <Category data={this.state.category} navigator={this.props.navigator}/>
                             <Hr/>
                             <Recommend name="轻松一刻" data={this.state.other}/>
                             <Text style={{height:70}}></Text>
