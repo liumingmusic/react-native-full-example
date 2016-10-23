@@ -3,11 +3,13 @@ import {
     StyleSheet,
     Text,
     View,
-    Image
+    Image,
+    TouchableOpacity
 } from 'react-native';
 
 //工具类
-import Uitls from '../../common/utils'
+import Uitls from '../../common/utils';
+import TWebView from '../twebview.js'
 
 //推荐组件
 class recommend extends Component {
@@ -26,12 +28,12 @@ class recommend extends Component {
         var data = this.state.data;
         for (var i in data) {
             let view = (
-                <View style={[styles.img_item]} key={i}>
+                <TouchableOpacity style={[styles.img_item]} key={i} onPress={this._showDetail.bind(this,data[i].url,data[i].title)}>
                     <Image style={[styles.img,styles.img_item_shadow]}
                            resizeMode="cover"
                            source={{uri:data[i].img}}/>
                     <Text style={styles.img_title} numberOfLines={2}>{data[i].title}</Text>
-                </View>
+                </TouchableOpacity>
             );
             if (i < 4) {
                 view_top.push(view);
@@ -55,6 +57,19 @@ class recommend extends Component {
                 </View>
             </View>
         );
+    }
+
+    //显示详情
+    _showDetail(url, name) {
+        //路由跳转
+        this.props.navigator.push({
+            component: TWebView,
+            title: name,
+            titleTextColor: "#000",
+            tintColor: "#000",
+            barTintColor: "#fff",
+            passProps: {url: url, isMargin: 1}//路由传递数据
+        });
     }
 
 }

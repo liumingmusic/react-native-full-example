@@ -5,11 +5,13 @@ import {
     View,
     Image,
     ListView,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from 'react-native';
 
 //工具类
-import Uitls from '../../common/utils'
+import Uitls from '../../common/utils';
+import TWebView from '../twebview.js';
 
 //列表组件
 class list extends Component {
@@ -30,7 +32,7 @@ class list extends Component {
                     enableEmptySections={true}
                     dataSource={this.state.dataSource}
                     renderRow={(rowData) =>
-                        <View style={styles.item}>
+                        <TouchableOpacity style={styles.item} onPress={this._showDetail.bind(this,rowData.url,rowData.title)}>
                             <View>
                                 <Image
                                 style={styles.img}
@@ -41,10 +43,23 @@ class list extends Component {
                                 <Text style={styles.title} numberOfLines={1}>{rowData.title}</Text>
                                 <Text style={styles.date}>{rowData.time.split("T")[0]}</Text>
                             </View>
-                        </View>
+                        </TouchableOpacity>
                     }/>
             </ScrollView>
         );
+    }
+
+    //显示详情
+    _showDetail(url, name) {
+        //路由跳转
+        this.props.navigator.push({
+            component: TWebView,
+            title: name,
+            titleTextColor: "#000",
+            tintColor: "#000",
+            barTintColor: "#fff",
+            passProps: {url: url, isMargin: 1}//路由传递数据
+        });
     }
 
     //页面渲染完成请求数据
