@@ -8,7 +8,7 @@ import {
 
 import Uitls from '../../common/utils'
 
-//阅读模块
+//推荐专题组件
 class topic extends Component {
 
     render() {

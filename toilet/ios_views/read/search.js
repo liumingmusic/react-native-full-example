@@ -8,7 +8,7 @@ import {
 
 import Uitls from '../../common/utils'
 
-//阅读模块
+//搜索组件
 class search extends Component {
 
     render() {

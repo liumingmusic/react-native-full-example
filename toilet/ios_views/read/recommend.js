@@ -9,7 +9,7 @@ import {
 //工具类
 import Uitls from '../../common/utils'
 
-//阅读模块
+//推荐组件
 class recommend extends Component {
 
     render() {

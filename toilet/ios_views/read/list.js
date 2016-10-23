@@ -5,7 +5,7 @@ import {
     View,
 } from 'react-native';
 
-//阅读模块
+//列表组件
 class list extends Component {
 
     render() {
