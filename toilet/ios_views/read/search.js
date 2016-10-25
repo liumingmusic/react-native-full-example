@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Text,
     View,
-    TextInput
+    TextInput,
+    AlertIOS
 } from 'react-native';
 
 //公共组件
@@ -36,11 +37,17 @@ class search extends Component {
 
     //数据搜索
     _search(text) {
+        //判断数据是否为空
+        if (!text) {
+            AlertIOS.alert('提示', '你尚未输入搜索的信息');
+            return;
+        }
         let url = 'http://123.57.39.116:3000/data/read?type=it';
         //路由跳转
         this.state.navigator.push({
             component: List,
             barTintColor: "#fff",
+            title: "搜索",
             passProps: {url: url}//路由传递数据
         });
     }

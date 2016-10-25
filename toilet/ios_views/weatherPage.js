@@ -6,13 +6,19 @@ import {
     View,
 } from 'react-native';
 
+//工具类
+import Uitls from '../common/utils';
+//引用自定义组件
+import TWebView from './twebview';
+
 //天气模块
 class weatherPage extends Component {
 
     render() {
+        const url = "http://localhost:63342/toiletApp/toilet/html/weather.html";
         return (
-            <View>
-                <Text style={styles.text}>天气</Text>
+            <View style={styles.container}>
+                <TWebView url={url}/>
             </View>
         );
     }
@@ -21,11 +27,8 @@ class weatherPage extends Component {
 
 //样式表
 const styles = StyleSheet.create({
-    text: {
-        fontSize:60,
-        color: 'blue',
-        margin: 50,
-        textAlign:'center'
+    container: {
+        flex: 1
     }
 });
 
