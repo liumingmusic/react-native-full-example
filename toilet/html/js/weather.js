@@ -40,19 +40,44 @@ map.plugin('AMap.Geolocation', function () {
     //回调函数
     AMap.event.addListener(geolocation, 'complete', function (data) {
         map.clearMap();
-        if (data.info === "SUCCESS" && data.type === "complete") {
-            map.setZoom(16);
-        } else {
-            alert("调用地图定位失败");
-        }
+        map.setZoom(16);
+        //TODO 拿到是当前的经纬度，天气服务是提供城市名或者城市编码
+        showWeather([data.position.lng, data.position.lat]);
     });
     AMap.event.addListener(geolocation, 'error', function () {
-        alert("定位失败，请开启定位服务：设置 -> 隐私 -> 定位服务 -> 小明找厕所 -> 使用定位期间打开");
+        alert('定位失败，请在手机上开启定位:设置->隐私->定位服务->找厕所->使用应用期间');
     });
 });
 
-
-//屏蔽默操作
-document.querySelector('a.amap-logo').onclick = function () {
-    return false;
+//显示天气信息
+var showWeather = function (center) {
+    var marker = new AMap.Marker({
+        position: center,
+        map: map,
+        content: '<div class="loc_circle"></div><img class="loc_img" src="loc.png" style="width:16px;"/>'
+    });
+    //使用逆地理编码，获取当前的城市编码信息
+    AMap.service('AMap.Geocoder', function () {
+        var geo = new AMap.Geocoder();
+        geo.getAddress(center, function (status, result) {
+            if (status === 'complete' && result.info === 'OK') {
+                //获取天气信息
+                var district = result.regeocode.addressComponent.district;
+                AMap.service('AMap.Weather', function () {
+                    var weather = new AMap.Weather();
+                    weather.getLive(district, function (err, result) {
+                        if (err) {
+                            return;
+                        }
+                        document.querySelector('#weather_pro').innerHTML = result.province;
+                        document.querySelector('#weather_city').innerHTML = result.city;
+                        document.querySelector('#weather_weather').innerHTML = result.weather;
+                        document.querySelector('#weather_wind').innerHTML = result.windDirection;
+                        document.querySelector('#weather_temp').innerHTML = result.temperature;
+                        document.querySelector('#weather_time').innerHTML = result.reportTime;
+                    });
+                });
+            }
+        });
+    });
 };

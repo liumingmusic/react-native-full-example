@@ -9,6 +9,7 @@
   "dependencies": {
     "react": "15.3.2",
     "react-native": "0.35.0",
+    "react-native-easy-toast": "^1.0.2",
     "react-native-elements": "^0.6.2",
     "react-native-modal": "^0.4.0"
   },

@@ -6,11 +6,12 @@ import {
     TextInput,
     AlertIOS
 } from 'react-native';
+/*第三方组件*/
 
 //公共组件
-import Uitls from '../../common/utils'
+import Uitls from '../../common/utils';
 //list组件
-import List from './list'
+import List from './list';
 //搜索组件
 class search extends Component {
 

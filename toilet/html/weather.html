@@ -12,14 +12,25 @@
     <meta name="browsermode" content="application">
     <meta name="x5-page-mode" content="app">
     <meta name="msapplication-tap-highlight" content="no">
+    <title>天气</title>
     <title>附近</title>
     <!--高德地图url-->
     <script type="text/javascript" src="http://webapi.amap.com/maps?v=1.3&key=a876e65cf9a87bb86cc0c3d2d767e7eb"></script>
     <!--样式控制-->
-    <link rel="stylesheet" href="./css/nearby.css"/>
+    <link rel="stylesheet" href="./css/weather.css"/>
 </head>
 <body>
 <div id="container"></div>
+<div id="panel"></div>
+<div class="weather_panel">
+    <div class="weather_title">天气信息</div>
+    <div>省/市: <span id="weather_pro"></span></div>
+    <div>区/县: <span id="weather_city"></span></div>
+    <div>天气: <span id="weather_weather"></span></div>
+    <div>风向: <span id="weather_wind"></span></div>
+    <div>温度: <span id="weather_temp"></span>℃</div>
+    <div>报告时间: <span id="weather_time"></span></div>
+</div>
 <script src="./js/weather.js"></script>
 </body>
 </html>
