@@ -5,8 +5,10 @@ import {
     View,
     ScrollView,
     NavigatorIOS,
-    RefreshControl
+    RefreshControl,
+    ActivityIndicator
 } from 'react-native';
+
 //工具类
 import Uitls from '../common/utils'
 
@@ -67,7 +69,11 @@ class readView extends Component {
                             <Text style={{height:70}}></Text>
                         </ScrollView >
                         :
-                        <Text>没有数据显示</Text>
+                        (<ActivityIndicator
+                            animating={true}
+                            style={[{height: 80}]}
+                            size="large"
+                            />)
                 }
             </View>
         );
