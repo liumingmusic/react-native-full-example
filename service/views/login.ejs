@@ -7,65 +7,35 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title>后台管理</title>
-    <link rel="stylesheet" type="text/css" href="/js/bootstrap3.3.0/css/bootstrap.min.css">
-    <style type="text/css" media="screen">
-        .form-signin{
-            width: 30%;
-            text-align: center;
-            margin: 100px auto 0 auto;
-        }
-        input {
-            margin-bottom: 10px;
-        }
-    </style>    
+    <link rel="stylesheet" type="text/css" href="/js/lib/bootstrap3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/login.css"/>
 </head>
 <body>
-    <div class="container">
-      <!-- 导航条 -->
-      <nav class="navbar navbar-inverse" role="navigation">
+<div class="container">
+    <!-- 导航条 -->
+    <nav class="navbar navbar-inverse" role="navigation">
         <div class="container-fluid">
-          <div class="navbar-header">
-            <a class="navbar-brand" href="#">厕所在哪后台管系统</a>
-          </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">厕所在哪后台管系统</a>
+            </div>
         </div>
-      </nav>
-      <!-- 登录 -->
-      <form class="form-signin" role="form">
+    </nav>
+    <!-- 登录 -->
+    <form class="form-signin" role="form">
         <h2 class="form-signin-heading">请登录</h2>
-        <input type="text" class="form-control" id="username" placeholder="请输入账号" required autofocus>
+        <input type="text" class="form-control" id="username" placeholder="请输入账号" required autofocus autocomplete="off">
         <input type="password" class="form-control" id="password" placeholder="请输入密码" required>
         <button class="btn btn-lg btn-primary btn-block" type="button" id="btn">登录</button>
-      </form>
-    </div>
+        <div class="alert alert-danger alert-dismissible fade in login-info hidden" role="alert">
 
-    <script type="text/javascript" src="/js/jquery-2.2.3.min.js"></script>
-    <script src="/js/bootstrap3.3.0/js/bootstrap.min.js"></script>
+        </div>
+    </form>
 
-    <script type="text/javascript">
-        $('#btn').on('click', function(){
-            var username = $('#username').val();
-            var password = $('#password').val();
-            var obj = {
-                username: username,
-                password: password
-            };
-            $.ajax({
-                type: 'POST',
-                url: '/data/login',
-                dataType: 'json',
-                data: obj,
-                success: function(data){
-                    if(data.status){
-                        window.location.href = '/';
-                    }else{
-                        alert('登录失败');
-                    }
-                },
-                error: function(){
-                    alert('登录失败');
-                }
-            });
-        });
-    </script>
+</div>
+<!--第三方资源-->
+<script type="text/javascript" src="/js/lib/jquery-2.2.3.min.js"></script>
+<script src="/js/lib/bootstrap3.3.0/js/bootstrap.min.js"></script>
+<!--登录验证-->
+<script src="/js/login.js"></script>
 </body>
 </html>

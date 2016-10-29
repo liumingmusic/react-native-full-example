@@ -1,0 +1,14 @@
+@charset "UTF-8";
+.form-signin {
+    width: 30%;
+    text-align: center;
+    margin: 100px auto 0 auto;
+}
+
+input {
+    margin-bottom: 10px;
+}
+
+.login-info {
+    margin-top: 10px;
+}

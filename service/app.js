@@ -13,7 +13,7 @@ var users = require('./routes/users');
 
 var app = express();
 
-// view engine setup
+// view engine setup 设置所有路由请求的视图路径
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -21,15 +21,16 @@ app.set('view engine', 'ejs');
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
+//设置静态文件目录
 app.use(express.static(path.join(__dirname, 'public')));
 
 //设置密钥
 app.use(session({
-  secret: '#sddjswjdhww22ygfw2233@@@%#$!@%Q!%*12',
-  resave: false,
-  saveUninitialized: true
+    secret: '#sddjswjdhww22ygfw2233@@@%#$!@%Q!%*12',
+    resave: false,
+    saveUninitialized: true
 }));
 
 //设置路由访问的requestMapping
@@ -38,10 +39,10 @@ app.use('/data', data);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
-    next(err);
+    return res.render("error/404", {});
 });
 
 // error handlers
@@ -49,7 +50,7 @@ app.use(function(req, res, next) {
 // development error handler
 // will print stacktrace
 if (app.get('env') === 'development') {
-    app.use(function(err, req, res, next) {
+    app.use(function (err, req, res, next) {
         res.status(err.status || 500);
         res.render('error', {
             message: err.message,
@@ -60,7 +61,7 @@ if (app.get('env') === 'development') {
 
 // production error handler
 // no stacktraces leaked to user
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
     res.status(err.status || 500);
     res.render('error', {
         message: err.message,
