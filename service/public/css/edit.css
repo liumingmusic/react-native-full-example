@@ -1,0 +1,88 @@
+@charset "UTF-8";
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+
+.container-fluid .navbar-header {
+    margin-left: 20px;
+}
+
+.navbar-header .navbar-brand {
+    color: #fff
+}
+
+.header_user {
+    line-height: 50px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.form-horizontal .form-group {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/*主题内容*/
+
+.container-table {
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.container-table td {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.container-table td:nth-child(1) {
+    max-width: 100px;
+}
+
+.container-table td:nth-child(2) {
+    max-width: 100px;
+}
+
+.container-table td:nth-child(3) {
+    max-width: 200px;
+}
+
+.container-table td:nth-child(4) {
+    max-width: 200px;
+}
+
+.show-img a {
+    display: inline-block;
+    float: right;
+    margin-bottom: -3px;
+    cursor: pointer;
+}
+
+.img-url {
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    display: inline-block;
+}
+
+.container-table td:nth-child(4) img {
+    width: 25px;
+    height: 25px;
+    float: right;
+}
+
+.container-table td:nth-child(5) {
+    max-width: 200px;
+}
+
+.container-table td:nth-child(5) {
+    max-width: 200px;
+}

@@ -1,6 +1,24 @@
 @charset "UTF-8";
+
+.container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.navbar {
+    border-radius: 0;
+}
+
+.container-fluid .navbar-header {
+    margin-left: 20px;
+}
+
+.navbar-header .navbar-brand {
+    color: #fff
+}
+
 .form-signin {
-    width: 30%;
+    width: 25%;
     text-align: center;
     margin: 100px auto 0 auto;
 }

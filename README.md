@@ -45,6 +45,33 @@
             app.js                        //前端主入口文件
             package.json                  //配置信息，依赖配置部分相当于java的pom.xml文件
 ```
+
+### 1.4 读取接口设计
+
+**统一规定后端返回数据格式**
+```javascript
+   {
+        status : 1,           //后端返回到页面标示  1 成功 2 表单验证失败 3 系统异常 4 没有权限
+        data   : [],          //请求成功的数据信息  可为对象，也可以为对象数组
+        info   : '查询成功'    //当前接口执行的操作语  登录成功 查询成功 表单验证失败 没有权限等等
+
+   }
+```
+
+1. 笑料数据接口:  __/data/read/cookies__
+2. 互联网资讯接口: __/data/read/it__
+3. 管理数据接口:   __/data/read/manager__
+4. 散文数据接口:   __/data/read/prose__
+5. 阅读模块配置:   __/data/read/config__
+
+### 1.6 数据存储接口设计
+**写入操作数据都为post请求**
+1. 笑料数据接口:  __/data/write__
+2. 互联网资讯接口: __/data/write__
+3. 管理数据接口:   __/data/write__
+4. 散文数据接口:   __/data/write__
+5. 阅读模块配置:   __/data/write__
+
 ## 2、app开发
 ### 2.1、jsbundle文件优化加载
 打包jsbundle文件 加载成功便于app加载

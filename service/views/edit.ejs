@@ -1,63 +1,97 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>后台管理</title>
-    <style type="text/css" rel="stylesheet">
-        html,body{width:100%;height:100%;margin:0;padding:0;font-family:"lucida grande", "lucida sans unicode", lucida, helvetica, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;}
-        .header{height:40px;width:100%;background-color:#242424;position:fixed;}
-        .header_title{line-height:40px;margin-left:60px;color:#fff;font-size:15px;}
-        .header_user{font-size:12px;margin-left:20px;color:#ccc;}
-        .addinfo{width:550px;height:250px;padding-top:100px;margin-left:auto;margin-right:auto;font-size:13px;}
-        .addinfo input{width:450px;height:28px;margin-bottom:10px;outline:none;padding-left:5px;}
-        .addinfo span{display:inline-block;width: 50px;}
-        .addinfo_btn{width:450px;height:35px;text-align:center;line-height:35px;border:1px solid #ccc;margin-left:50px;margin-top:20px;border-radius:5px;}
-        .addinfo_btn:hover{background-color:#36A0FB;color:#fff;border:1px solid #36A0FB;}
-        table{width:1000px;margin-left:auto;margin-right:auto;margin-top:0px;font-size:13px;border-collapse:collapse;border-spacing:0;margin-bottom:50px;table-layout:fixed;}
-        table td{border:1px solid #ddd;padding:0;width:20%;white-space:nowrap;overflow:hidden;word-break:break-all;font-size:12px;font-weight:300;text-overflow: ellipsis;}
-        table tr:hover{background-color:#36A0FB;color:#fff !important;}
-        a{color:#fff;text-decoration:none;}
-    </style>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="/js/lib/bootstrap3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/js/lib/slide/css/simple.slide.css">
+    <link rel="stylesheet" href="/css/edit.css"/>
 </head>
 <body>
-    <div class="header">
-        <div class="header_title"><a href="/">后台管理系统</a><span class="header_user">欢迎你,Admin</span></div>
-    </div>
-    <div classjscss="addinfo" style="padding-top: 70px">
-        <div style="text-align: center;">
-            <span>标题 </span><input id="title" type="text"/>
+<div class="container-fluid">
+    <!-- 导航条 -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">后台管理系统</a>
+                <span class="header_user">欢迎你,Admin</span>
+            </div>
         </div>
-        <div style="text-align: center;">
-            <span>图片 </span><input id="img" type="text"/>
-        </div>
-        <div style="text-align: center;">
-            <span>URL </span><input id="url" type="text"/>
-        </div>
-        <div style="text-align: center;" class="addinfo_btn">提交</div>
-    </div>
+    </nav>
+    <!--路径导航-->
+    <ol class="breadcrumb">
+        <li><a href="/">首页</a></li>
+        <li class="active"><%= name %></li>
+    </ol>
+    <!--表单区域-->
+    <form class="form-horizontal" role="form">
+        <div class="form-group">
+            <label for="title" class="col-sm-offset-2 col-sm-2 control-label">标题</label>
 
-    <div>
-        <table width="1000">
-            <tr style="text-align:center;font-size:15px;height:30px;color:#fff;background-color:#36A0FB;border:0;">
-                <td style="width:55px">编号</td>
-                <td style="width:100px;">ID</td>
-                <td>标题</td>
-                <td>图片链接</td>
-                <td>URL</td>
-                <td style="width:70px;">时间</td>
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="title" placeholder="标题">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="img" class="col-sm-offset-2 col-sm-2 control-label">图片URL</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="img" placeholder="图片URL">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="url" class="col-sm-offset-2 col-sm-2 control-label">文章URL</label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control" id="url" placeholder="文章URL">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-4 col-sm-4">
+                <button type="button" class="btn btn-success">提交数据</button>
+            </div>
+        </div>
+    </form>
+    <hr/>
+    <!--表格区域-->
+    <div class="container-table">
+        <table class="table table-bordered table-hover">
+            <thead>
+            <tr>
+                <th class="text-center">编号</th>
+                <th class="text-center">ID</th>
+                <th class="text-center">标题</th>
+                <th class="text-center">图片URL</th>
+                <th class="text-center">文章URL</th>
+                <th class="text-center">时间</th>
             </tr>
-            <%for(var i in data){%>
-                <tr style="text-align:center;height:26px;color:#4C4C4C;">
-                    <td width="10px;"><%=(parseInt(i)+1)%></td>
-                    <td><%=data[i].id%></td>
-                    <td><%=data[i].title%></td>
-                    <td><%=data[i].img%></td>
-                    <td><%=data[i].url%></td>
-                    <td><%=data[i].time%></td>
-                </tr>
-            <%}%>
+            </thead>
+            <tbody>
+            <% for(var i in data){ %>
+            <tr>
+                <td title="<%= (parseInt(i) + 1) %>"><%= (parseInt(i) + 1) %></td>
+                <td title="<%= data[i].id %>"><%= data[i].id %></td>
+                <td title="<%= data[i].title %>"><%= data[i].title %></td>
+                <td title="<%= data[i].img %>" class="show-img">
+                    <span class="img-url"><%= data[i].img %></span>
+                    <a href="javascript:" i="<%= data[i].img %>"><img src="<%= data[i].img %>" alt="点击预览" title="点击预览"/></a>
+                </td>
+                <td title="<%= data[i].url %>"><%= data[i].url %></td>
+                <td title="<%= data[i].time.substr(0, data[i].time.lastIndexOf("T")) %>" class="text-center"><%= data[i].time.substr(0, data[i].time.lastIndexOf("T")) %></td>
+            </tr>
+            </tbody>
+            <% } %>
         </table>
     </div>
-    <script type="text/javascript" src="/js/jquery-2.2.3.min.js"></script>
-    <script type="text/javascript" src="/js/edit.js"></script>
+</div>
+
+<script type="text/javascript" src="/js/lib/jquery-2.2.3.min.js"></script>
+<script src="/js/lib/bootstrap3.3.0/js/bootstrap.min.js"></script>
+<script src="/js/lib/slide/js/simple.slide.js"></script>
+<script type="text/javascript" src="/js/edit.js"></script>
 </body>
 </html>
