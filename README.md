@@ -4,6 +4,7 @@
 1. 安装node软件：<https://nodejs.org/en>
 2. 安装淘宝滤镜：npm install -g cnpm --registry = https://registry.npm.taobao.org
 3. 设置全局的npm从国内下载资源， npmrc添加配置。mac下面地址为 /Users/liumingming/.npmrc，修改strict-ssl=true 和 registry=https://registry.npm.taobao.org
+
 ### 1.2 express环境搭建
 1. 安装express-generator：npm install -g express-generator，用户快速创建express项目
 2. 生成项目模块：进入到项目目录 /User/liumm/A_study/app/toiletApp 下面，执行命令 express -e service，其中-e为ejs模块简写
@@ -12,6 +13,7 @@
 5. 预览：启动已经开发本地的 localhost:3000，访问地址即可看见启动的页面
 6. 修改预览：项目中app.js 文件为服务启动入口路径。修改项目下面 views/index.ejs文件，重启服务进行查看
 7. express修改热加载：安装supervisor，npm install supervisor -g，修改项目自动更新
+
 ### 1.3 项目文件目录组织
 ```
     service
