@@ -83,7 +83,45 @@
 ![登录界面](/service/public/image/edit.png "登录界面")
 4. 查看界面
 ![登录界面](/service/public/image/showImage.png "登录界面")
+
+***
+
 ## 2、app开发
-### 2.1、jsbundle文件优化加载
+### 2.1 react native 环境搭建
+
+### 2.2 文件目录组织
+
+### 2.3 组件关系图
+
+### 2.4 app运行展示
+
+### 2.5 优化加载
 打包jsbundle文件 加载成功便于app加载
 react-native bundle --entey-file index.ios.js --platform ios --dev false --bndle-output main.ios.jsbundle
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
