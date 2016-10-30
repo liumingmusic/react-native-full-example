@@ -22,7 +22,7 @@ router.get('/login', function (req, res, next) {
 
 //用户退出路由
 router.get('/exit', function (req, res, next) {
-    req.session.user = {};//清空数据
+    delete req.session.user; //清空数据
     return res.render('login', {});
 });
 

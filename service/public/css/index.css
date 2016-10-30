@@ -11,7 +11,9 @@
 }
 
 .container-fluid .navbar-header {
-    margin-left: 20px;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 20px;
 }
 
 .navbar-header .navbar-brand {
@@ -22,6 +24,12 @@
     line-height: 50px;
     color: #fff;
     font-size: 13px;
+}
+
+.header_exit {
+    float: right;
+    margin-right: 20px;
+    line-height: 50px;
 }
 
 /*主题区域*/
