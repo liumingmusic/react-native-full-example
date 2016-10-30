@@ -75,9 +75,14 @@
 ```
 
 ### 1.7 页面开发
-
+1. 登录界面
 ![登录界面](/service/public/image/login.png "登录界面")
-
+2. 首页界面
+![登录界面](/service/public/image/index.png "登录界面")
+3. 编辑界面
+![登录界面](/service/public/image/edit.png "登录界面")
+4. 查看界面
+![登录界面](/service/public/image/showImage.png "登录界面")
 ## 2、app开发
 ### 2.1、jsbundle文件优化加载
 打包jsbundle文件 加载成功便于app加载

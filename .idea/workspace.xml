@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="568d23b8-3c2c-41c3-8111-6b1ea9b9c1e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/public/image/edit.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/public/image/index.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/public/image/login.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/public/image/showImage.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/service/public/data/it.json" afterPath="$PROJECT_DIR$/service/public/data/it.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="toiletApp.iws" />
@@ -33,8 +28,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state>
-              <first_editor vertical-scroll-proportion="0.6581197">
-                <caret line="74" column="3" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
+              <first_editor vertical-scroll-proportion="0.52991456">
+                <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -505,7 +500,13 @@
       <option name="project" value="LOCAL" />
       <updated>1477816683067</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="重构后端代码">
+      <created>1477817797060</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1477817797060</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -968,8 +969,8 @@
       </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state>
-          <first_editor vertical-scroll-proportion="0.6581197">
-            <caret line="74" column="3" selection-start-line="74" selection-start-column="3" selection-end-line="74" selection-end-column="3" />
+          <first_editor vertical-scroll-proportion="0.52991456">
+            <caret line="70" column="29" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
             <folding />
           </first_editor>
           <second_editor />
