@@ -34,26 +34,26 @@
             <label for="title" class="col-sm-offset-2 col-sm-2 control-label">标题</label>
 
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="title" placeholder="标题">
+                <input type="text" class="form-control" id="title" placeholder="标题" required data-validation-required-message="必须填写标题">
             </div>
         </div>
         <div class="form-group">
             <label for="img" class="col-sm-offset-2 col-sm-2 control-label">图片URL</label>
 
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="img" placeholder="图片URL">
+                <input type="text" class="form-control" id="img" placeholder="图片URL" required data-validation-required-message="必须填写图片URL">
             </div>
         </div>
         <div class="form-group">
             <label for="url" class="col-sm-offset-2 col-sm-2 control-label">文章URL</label>
 
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="url" placeholder="文章URL">
+                <input type="text" class="form-control" id="url" placeholder="文章URL" required data-validation-required-message="必须填写文章地址">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-4">
-                <button type="button" class="btn btn-success" id="addinfo_btn">提交数据</button>
+                <button type="submit" class="btn btn-success" id="addinfo_btn">提交数据</button>
             </div>
         </div>
     </form>
