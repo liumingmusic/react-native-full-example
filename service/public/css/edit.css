@@ -40,7 +40,7 @@
 /*主题内容*/
 
 .container-table {
-    max-width: 1024px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -51,7 +51,7 @@
 }
 
 .container-table td:nth-child(1) {
-    max-width: 100px;
+    max-width: 50px;
 }
 
 .container-table td:nth-child(2) {
@@ -63,7 +63,11 @@
 }
 
 .container-table td:nth-child(4) {
-    max-width: 200px;
+    max-width: 250px;
+}
+
+.container-table td:nth-child(5) {
+    max-width: 40px;
 }
 
 .show-img a {

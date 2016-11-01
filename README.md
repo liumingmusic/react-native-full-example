@@ -84,6 +84,15 @@
 4. 查看界面
 ![登录界面](/service/public/image/showImage.png "登录界面")
 
+### 1.8 调试express代码
+
+1. 安装node-inspector: sudo cnpm install -g node-inspector
+2. Terminal输入: supervisor --debug ./bin/www
+3. 打开新的Terminal输入: node-inspector & (注:也是在项目目录之中)
+4. 输入第三步显示的地址，开发浏览器访问输入(http://127.0.0.1:8080/?port=5858)，接下来就和调试javascript一样了
+5. 如果不想使用8080端口可以修改: node-inspector & -p 8888
+
+
 ***
 
 ## 2、app开发

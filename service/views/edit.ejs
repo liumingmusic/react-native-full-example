@@ -9,6 +9,7 @@
     <title>后台管理系统</title>
     <link rel="stylesheet" type="text/css" href="/js/lib/bootstrap3.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="/js/lib/slide/css/simple.slide.css">
+    <link rel="stylesheet" type="text/css" href="/js/lib/sweetalter/sweetalert.css">
     <link rel="stylesheet" href="/css/edit.css"/>
 </head>
 <body>
@@ -25,6 +26,7 @@
     </nav>
     <!--路径导航-->
     <ol class="breadcrumb">
+        <li><a href="#">当前位置: </a></li>
         <li><a href="/">首页</a></li>
         <li class="active"><%= name %></li>
     </ol>
@@ -34,26 +36,26 @@
             <label for="title" class="col-sm-offset-2 col-sm-2 control-label">标题</label>
 
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="title" placeholder="标题" required data-validation-required-message="必须填写标题">
+                <input type="text" class="form-control" id="title" placeholder="标题">
             </div>
         </div>
         <div class="form-group">
             <label for="img" class="col-sm-offset-2 col-sm-2 control-label">图片URL</label>
 
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="img" placeholder="图片URL" required data-validation-required-message="必须填写图片URL">
+                <input type="text" class="form-control" id="img" placeholder="图片URL">
             </div>
         </div>
         <div class="form-group">
             <label for="url" class="col-sm-offset-2 col-sm-2 control-label">文章URL</label>
 
             <div class="col-sm-4">
-                <input type="text" class="form-control" id="url" placeholder="文章URL" required data-validation-required-message="必须填写文章地址">
+                <input type="text" class="form-control" id="url" placeholder="文章URL">
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-4">
-                <button type="submit" class="btn btn-success" id="addinfo_btn">提交数据</button>
+                <button type="button" class="btn btn-success" id="addinfo_btn">提交数据</button>
             </div>
         </div>
     </form>
@@ -69,13 +71,14 @@
                 <th class="text-center">图片URL</th>
                 <th class="text-center">文章URL</th>
                 <th class="text-center">时间</th>
+                <th class="text-center">操作</th>
             </tr>
             </thead>
             <tbody>
             <% for(var i in data){ %>
             <tr>
                 <td title="<%= (parseInt(i) + 1) %>"><%= (parseInt(i) + 1) %></td>
-                <td title="<%= data[i].id %>"><%= data[i].id %></td>
+                <td class="text-capitalize" title="<%= data[i].id %>"><%= data[i].id %></td>
                 <td title="<%= data[i].title %>"><%= data[i].title %></td>
                 <td title="<%= data[i].img %>" class="show-img">
                     <span class="img-url"><%= data[i].img %></span>
@@ -83,6 +86,10 @@
                 </td>
                 <td title="<%= data[i].url %>"><%= data[i].url %></td>
                 <td title="<%= data[i].time.substr(0, data[i].time.lastIndexOf("T")) %>" class="text-center"><%= data[i].time.substr(0, data[i].time.lastIndexOf("T")) %></td>
+                <td class="text-center">
+                    <input type="button" class="btn btn-danger btn-sm deleteHandler" value="删除" data-refId="<%= data[i].id %>"/>&nbsp;&nbsp;
+                    <input type="button" class="btn btn-info btn-sm updateHandler" value="编辑" data-refId="<%= data[i].id %>"/>
+                </td>
             </tr>
             </tbody>
             <% } %>
@@ -92,7 +99,7 @@
 
 <script type="text/javascript" src="/js/lib/jquery-2.2.3.min.js"></script>
 <script src="/js/lib/bootstrap3.3.0/js/bootstrap.min.js"></script>
-<script src="/js/lib/messager.js"></script>
+<script src="/js/lib/sweetalter/sweetalert.min.js"></script>
 <script src="/js/lib/slide/js/simple.slide.js"></script>
 <script type="text/javascript" src="/js/edit.js"></script>
 </body>

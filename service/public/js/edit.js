@@ -6,6 +6,8 @@ $(function () {
         $('#addinfo_btn').on('click', _save);
         //图片预览
         $(".show-img a").simpleSlide();
+        //编辑、删除按钮绑定事件
+        $(".deleteHandler").bind("click", _delete);
     }
 
     //具体的执行方法
@@ -29,24 +31,51 @@ $(function () {
             type: 'POST',
             url: '/data/write',
             data: obj,
-            dataType: 'json',
-            async: false
+            dataType: 'json'
         }).done(function (data) {
             if (data.status) {
                 window.location.reload();
             } else {
-                Messager.alert({Msg: "数据添加有问题"});
+                swal("数据添加有问题")
             }
         }).fail(function () {
-            Messager.alert({Msg: "数据添加有问题"});
+            swal("数据添加有问题")
         });
+    }
+
+    //删除数据信息
+    function _delete() {
+        //获取删除数据的id
+        var id = $(this).attr("data-refId");
+        //组装数据
+        var obj = {
+            id: id,
+            type: _getQueryString()
+        };
+        //TODO ajax请求删除数据，还要提示用户确定是否删除，之后再重新加载数据
+        swal({
+                title: "你确定删除数据吗?",
+                text: "删除的数据将不可恢复",
+                type: "warning",
+                showCancelButton: true,
+                cancelButtonText: "取消",
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "删除",
+                closeOnConfirm: false,
+                showLoaderOnConfirm: true
+            },
+            function () {
+                setTimeout(function () {
+                    swal("删除成功!");
+                }, 5000);
+            }
+        );
     }
 
     //获取地址栏信息，判断修改的资源类型
     function _getQueryString() {
         var href = window.location.href;
-        var type = href.substr(href.lastIndexOf("/") + 1, href.length);
-        return type;
+        return href.substr(href.lastIndexOf("/") + 1, href.length);
     }
 
     //默认调用
