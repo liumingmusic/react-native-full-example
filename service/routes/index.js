@@ -28,17 +28,13 @@ router.get('/exit', function (req, res, next) {
 
 //阅读模块配置接噢耶
 router.get('/config', function (req, res, next) {
-    if (!req.session.user) {
-        return res.render('login', {});
-    }
+    checkSessionUser(req, res);
     res.render('tuijian', {});
 });
 
 //编辑路由制定
 router.get('/edit/:type', function (req, res, next) {
-    if (!req.session.user) {
-        return res.render('login', {});
-    }
+    checkSessionUser(req, res);
     //获取参数
     var type = req.params.type;
     if (type) {
@@ -93,6 +89,18 @@ function _isArray(array, item) {
         }
     }
     return name;
+}
+
+/**
+ * 判断用户权限问题
+ * @param req 请求的对象
+ * @param res 响应的对象
+ * @returns {*} 返回成功与否
+ */
+function checkSessionUser(req, res) {
+    if (!req.session.user) {
+        return res.render('login', {});
+    }
 }
 
 //首页大表单

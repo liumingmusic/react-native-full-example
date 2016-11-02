@@ -40,13 +40,7 @@ router.get('/read/:type', function (req, res, next) {
 
 //数据存储模块 后台开发使用
 router.post('/write', function (req, res, next) {
-    if (!req.session.user) {
-        return res.send({
-            status: 0,
-            info: '未鉴权认证',
-            data: []
-        });
-    }
+    checkSessionUser(req, res);
     //操作json资源的文件名
     var type = req.param('type') || '';
     //关键字段
@@ -101,15 +95,56 @@ router.post('/write', function (req, res, next) {
     });
 });
 
-//阅读模块写入接口 后台开发使用
-router.post('/write_config', function (req, res, next) {
-    if (!req.session.user) {
+//用户删除数据操作
+router.post('/delete', function (req, res, next) {
+    checkSessionUser(req, res);
+    //获取关键数据
+    var type = req.param('type') || '';
+    var id = req.param('id') || '';
+    //判断数据完整性
+    if (!type || !id) {
         return res.send({
             status: 0,
-            info: '未鉴权认证',
+            info: '提交的字段不全',
             data: []
         });
     }
+    //1)读取文件
+    var filePath = PATH + type + '.json';
+    fs.readFile(filePath, function (err, data) {
+        if (err) {
+            return res.send({
+                status: 0,
+                info: '读取数据失败',
+                data: []
+            });
+        }
+        //数据信息
+        var arr = JSON.parse(data.toString());
+        //2)根据id删除数组中的一项
+        var result = removeArrayId(arr, id);
+        //3)写入文件
+        var newData = JSON.stringify(result);
+        fs.writeFile(filePath, newData, function (err) {
+            if (err) {
+                return res.send({
+                    status: 0,
+                    info: '删除数据失败',
+                    data: []
+                });
+            }
+            return res.send({
+                status: 1,
+                info: '删除数据件成功',
+                data: result
+            });
+        });
+    });
+});
+
+//阅读模块写入接口 后台开发使用
+router.post('/write_config', function (req, res, next) {
+    checkSessionUser(req, res);
     //TODO:后期进行提交数据的验证
     //防xss攻击 xss
     // npm install xss
@@ -163,6 +198,22 @@ router.post('/login', function (req, res, next) {
     });
 });
 
+/**
+ * 判断用户权限问题
+ * @param req 请求的对象
+ * @param res 反馈的对象
+ * @returns {*} 返回成功与否
+ */
+function checkSessionUser(req, res) {
+    if (!req.session.user) {
+        return res.send({
+            status: 0,
+            info: '未鉴权认证',
+            data: []
+        });
+    }
+}
+
 //guid 生成唯一id
 function guidGenerate() {
     //时间戳也可以的
@@ -171,6 +222,24 @@ function guidGenerate() {
             v = c == 'x' ? r : (r & 0x3 | 0x8);
         return v.toString(16);
     }).toUpperCase();
+}
+
+/**
+ * 根据id删除数据中的一项
+ * @param arr 数组
+ * @param id 对应的id
+ * @returns {*} 返回新的数组
+ */
+function removeArrayId(arr, id) {
+    //TODO 目前这种方式有点二，要全部遍历数组中的每一项
+    var result = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i]["id"] !== id) {
+            result.push(arr[i]);
+        }
+    }
+    //返回生成的新数组
+    return result;
 }
 
 module.exports = router;

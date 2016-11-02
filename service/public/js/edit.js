@@ -65,11 +65,28 @@ $(function () {
                 showLoaderOnConfirm: true
             },
             function () {
-                setTimeout(function () {
-                    swal("删除成功!");
-                }, 5000);
+                _deleteHandler(obj);
             }
         );
+    }
+
+    //删除执行的具体方法， 单独提取出来，就是不让其嵌套太深
+    function _deleteHandler(obj) {
+        //添加请求
+        $.ajax({
+            type: 'POST',
+            url: '/data/delete',
+            data: obj,
+            dataType: 'json'
+        }).done(function (data) {
+            if (data.status) {
+                window.location.reload();
+            } else {
+                swal("数据删除成功")
+            }
+        }).fail(function () {
+            swal("数据删除失败")
+        });
     }
 
     //获取地址栏信息，判断修改的资源类型

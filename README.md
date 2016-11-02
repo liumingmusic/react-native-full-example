@@ -65,7 +65,9 @@
 
 ### 1.6 数据存储接口设计
 **写入操作数据都为post请求，统一为 /data/write，传入参数如下：**
+**删除操作数据都为post请求，统一为 /data/delete，传入参数如下：**
 ```javascript
+    新增
     {
         type:   type,  //修改资源的类别
         title:  title, //文章标题
@@ -73,16 +75,24 @@
         img:    img    //图片路径
     }
 ```
-
+```javascript
+    删除
+    {
+        type:   type,  //修改资源的类别
+        id:     id,    //唯一id
+    }
+```
 ### 1.7 页面开发
 1. 登录界面
 ![登录界面](/service/public/image/login.png "登录界面")
 2. 首页界面
-![登录界面](/service/public/image/index.png "登录界面")
+![首页界面](/service/public/image/index.png "首页界面")
 3. 编辑界面
-![登录界面](/service/public/image/edit.png "登录界面")
-4. 查看界面
-![登录界面](/service/public/image/showImage.png "登录界面")
+![编辑界面](/service/public/image/edit.png "编辑界面")
+4. 删除操作
+![删除操作](/service/public/image/delete.png "删除操作")
+5. 查看操作
+![查看操作](/service/public/image/showImage.png "查看操作")
 
 ### 1.8 调试express代码
 
