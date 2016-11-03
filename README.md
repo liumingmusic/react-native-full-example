@@ -102,7 +102,21 @@
 4. 输入第三步显示的地址，开发浏览器访问输入(http://127.0.0.1:8080/?port=5858)，接下来就和调试javascript一样了
 5. 如果不想使用8080端口可以修改: node-inspector & -p 8888
 
-
+### 1.9 项目部署在服务器中
+1. 购买云服务器平台(可以看看阿里云、华为云、腾讯云)，目的只是操作技术，并非运维，只要能用就行
+2. 下载linux版的nodejs包，下载xshell进行安装
+3. 购买好的云服务账号，使用shell进行登录(网上教程很多，就是单纯的登录进去)
+4. 使用xshell自带的工具rz(在命令行中输入rz之后回车)，选择下载好的nodejs，进行远程导入，
+5. 使用命令: tar -xzf node-v4.4.4-linux-arm64.tar.gz 进行解压(注:导入进行来的node包，可以选择你知道的路径下面，便于后续查找)
+6. 进入到当前解压node的目录，输入pwd命令，获取当前文件夹的全路径
+7. 使用软连接快速使用命令(其中一个是node，一个是npm):
+ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/node /usr/local/bin/node
+ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
+8. 使用npm安装开发中使用express相关的包
+9. 新建一个文件夹，在里面使用git clone xxx.git 克隆你的项目，之后进入项目路径(服务端)，输入npm install 安装相应的依赖
+10. 使用npm安装pm2，用来启动和查看node相关的服,可参考 <https://segmentfault.com/a/1190000002539204>
+11. 使用命令: pm2 start ./bin/www 启动服务，即可使用外网查看。
+12. 只是大致记录步骤，后续视频完善。
 ***
 
 ## 2、app开发
