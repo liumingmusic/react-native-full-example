@@ -3,7 +3,10 @@ var router = express.Router();
 var fs = require('fs');
 //公共资源路径
 var PATH = './public/data/';
-
+//全局默认值、每页显示十条数据
+var pageRecorders = 5;
+var totalPages = 1;
+var page = 1;
 //首页路由请求
 router.get('/', function (req, res, next) {
     //登录用户判断
@@ -33,10 +36,12 @@ router.get('/config', function (req, res, next) {
 });
 
 //编辑路由制定
-router.get('/edit/:type', function (req, res, next) {
+router.get('/edit/:type/:page', function (req, res, next) {
     checkSessionUser(req, res);
     //获取参数
     var type = req.params.type;
+    page = req.params.page; //默认第一页
+    //传入数据判断
     if (type) {
         var obj = {};
         //判断请求是否在指定的路由里面
@@ -58,9 +63,25 @@ router.get('/edit/:type', function (req, res, next) {
                 });
             }
             var obj = JSON.parse(data.toString());
+            var result = null;
+            var count = obj.length;
+            //1) 总条数小于等于每页数 那就只有一页
+            if (count <= pageRecorders) {
+                totalPages = 1;
+                result = obj;
+            } else {
+                //2) 总条数大于每页数
+                totalPages = count % pageRecorders == 0 ? count / pageRecorders : Math.ceil(count / pageRecorders);
+                //3）处理数据进行分页操作 0,5  5,10  15,20
+                result = obj.slice((page - 1) * pageRecorders, pageRecorders * page);
+            }
+            //返回数据
             return res.render('edit', {
-                data: obj,
-                name: name
+                data: result, //分页操作之后的数据信息
+                name: name,
+                page: page, //当前第几页(默认为一)
+                type: type,//当前模块类型
+                totalPages: totalPages //总页数
             });
         });
 
@@ -104,5 +125,4 @@ function checkSessionUser(req, res) {
 }
 
 //首页大表单
-
 module.exports = router;

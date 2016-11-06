@@ -1,7 +1,7 @@
 $(function () {
     $('#btn').on('click', function () {
-        var username = $('#username');
-        var password = $('#password');
+        var username = $('#username').val();
+        var password = $('#password').val();
         var loginInfo = $(".login-info");
         //必填验证
         if (!username || !password) {
@@ -11,8 +11,8 @@ $(function () {
         }
         //组装数据
         var obj = {
-            username: username.val(),
-            password: password.val()
+            username: username,
+            password: password
         };
         //登录请求
         $.ajax({

@@ -37,8 +37,16 @@
     margin-left: 0;
 }
 
-/*主题内容*/
+/*分页*/
+.pagination {
+    margin: 0;
+}
 
+.pagination-nav {
+    text-align: right;
+}
+
+/*主题内容*/
 .container-table {
     max-width: 1100px;
     margin: 0 auto;
@@ -50,6 +58,7 @@
     text-overflow: ellipsis;
 }
 
+/*控制宽度*/
 .container-table td:nth-child(1) {
     max-width: 50px;
 }
@@ -70,6 +79,7 @@
     max-width: 40px;
 }
 
+/*图片链接*/
 .show-img a {
     display: inline-block;
     float: right;

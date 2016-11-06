@@ -94,6 +94,32 @@
             </tbody>
             <% } %>
         </table>
+        <!--分页-->
+        <nav class="pagination-nav">
+            <ul class="pagination">
+                <!--1）如果总也等于1或者当前页数为一，上一页按钮不可点击-->
+                <% if(totalPages == 1 || page == 1){ %>
+                    <li class="disabled"><a>&laquo;</a></li>
+                <% } else { %>
+                    <li><a href="/edit/<%= type %>/<%= parseInt(page) - 1 %>">&laquo;</a></li>
+                <% } %>
+                <!--2）根据总条数循环生成多少个按钮-->
+                <% for(var i = 1; i <= totalPages; i++){ %>
+                    <!-- 3）根据后台返回的当前第几页，单独处理，设置样式-->
+                    <% if(i == page){ %>
+                        <li class="active"><a><%= i %></a></li>
+                    <% }else{ %>
+                        <li><a href="/edit/<%= type %>/<%= i %>"><%= i %></a></li>
+                    <% } %>
+                <% } %>
+                <!--4）如果总也等于1或者当前页数等于总页数，下一页按钮不可点击-->
+                <% if(totalPages == 1 || page == totalPages){ %>
+                    <li class="disabled"><a>&raquo;</a></li>
+                <% } else { %>
+                    <li><a href="/edit/<%= type %>/<%= parseInt(page) + 1 %>">&raquo;</a></li>
+                <% } %>
+            </ul>
+        </nav>
     </div>
 </div>
 
