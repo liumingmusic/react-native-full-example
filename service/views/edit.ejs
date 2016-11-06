@@ -97,6 +97,52 @@
     </div>
 </div>
 
+<!--修改数据弹出的modal-->
+<div class="modal fade" id="update-panel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span><span class="sr-only">关闭</span>
+                </button>
+                <h4 class="modal-title">修改信息</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" role="form" id="update-form">
+                    <div class="form-group">
+                        <label for="update-title" class="col-sm-2 control-label">标题</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="update-title" placeholder="标题">
+                            <!--隐藏的字段-->
+                            <input type="hidden" id="update-id">
+                            <input type="hidden" id="update-type">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-img" class="col-sm-2 control-label">图片URL</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="update-img" placeholder="图片URL">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="update-url" class="col-sm-2 control-label">文章URL</label>
+
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="update-url" placeholder="文章URL">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="update-btn">保存</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script type="text/javascript" src="/js/lib/jquery-2.2.3.min.js"></script>
 <script src="/js/lib/bootstrap3.3.0/js/bootstrap.min.js"></script>
 <script src="/js/lib/sweetalter/sweetalert.min.js"></script>

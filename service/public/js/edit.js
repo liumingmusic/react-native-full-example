@@ -8,6 +8,8 @@ $(function () {
         $(".show-img a").simpleSlide();
         //编辑、删除按钮绑定事件
         $(".deleteHandler").bind("click", _delete);
+        $(".updateHandler").bind("click", _update);
+
     }
 
     //具体的执行方法
@@ -86,6 +88,58 @@ $(function () {
             }
         }).fail(function () {
             swal("数据删除失败")
+        });
+    }
+
+    //修改方法，显示弹窗
+    function _update() {
+        var $updatePanel = $("#update-panel");
+        //获取删除数据的id
+        var id = $(this).attr("data-refId");
+        var type = _getQueryString();
+        //根据id查询数据信息
+        $.get("/data/findById/" + type + "/" + id).done(function (json) {
+            var obj = json.data;
+            //数据回现
+            for (var item in obj) {
+                $("#update-" + item).val(obj[item]);
+            }
+            //单独添加类型数据
+            $("#update-type").val(type);
+            //显示弹窗
+            $updatePanel.modal({
+                backdrop: 'static',
+                keyboard: false
+            });
+            //绑定事件
+            $("#update-btn").unbind("click").bind("click", _updateHandler);
+        });
+    }
+
+    //具体执行修改的方法
+    function _updateHandler() {
+        var $updatePanel = $("#update-panel");
+        //数组组装
+        var obj = {
+            id: $("#update-id").val(),
+            type: $("#update-type").val(),
+            title: $("#update-title").val(),
+            img: $("#update-img").val(),
+            url: $("#update-url").val()
+        };
+        //TODO 数据校验
+        //请求后台
+        $.post({
+            url: "/data/update",
+            type: 'POST',
+            data: obj,
+            dataType: 'json'
+        }).done(function (json) {
+            if (json.status === 1) {
+                window.location.reload();
+            }
+        }).fail(function () {
+            swal("数据添加有问题");
         });
     }
 

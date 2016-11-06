@@ -122,7 +122,7 @@ router.post('/delete', function (req, res, next) {
         //数据信息
         var arr = JSON.parse(data.toString());
         //2)根据id删除数组中的一项
-        var result = removeArrayId(arr, id);
+        var result = _removeArrayId(arr, id);
         //3)写入文件
         var newData = JSON.stringify(result);
         fs.writeFile(filePath, newData, function (err) {
@@ -139,6 +139,93 @@ router.post('/delete', function (req, res, next) {
                 data: result
             });
         });
+    });
+});
+
+//根据类型，数据id修改数据信息
+router.post('/update', function (req, res, next) {
+    checkSessionUser(req, res);
+    //获取关键数据
+    var type = req.param('type') || '';
+    var id = req.param('id') || '';
+    //修改数据字段
+    var url = req.param('url') || '';
+    var title = req.param('title') || '';
+    var img = req.param('img') || '';
+    //判断数据完整性
+    if (!type || !id) {
+        return res.send({
+            status: 0,
+            info: '提交的字段不全',
+            data: []
+        });
+    }
+    //1)读取文件
+    var filePath = PATH + type + '.json';
+    fs.readFile(filePath, function (err, data) {
+        if (err) {
+            return res.send({
+                status: 0,
+                info: '读取数据失败',
+                data: []
+            });
+        }
+        //数据信息
+        var arr = JSON.parse(data.toString());
+        //2)根据id删除数组中的一项
+        var result = _updateItemById(arr, id, title, img, url);
+        //3)写入文件
+        var newData = JSON.stringify(result);
+        fs.writeFile(filePath, newData, function (err) {
+            if (err) {
+                return res.send({
+                    status: 0,
+                    info: '修改数据失败',
+                    data: []
+                });
+            }
+            return res.send({
+                status: 1,
+                info: '修改数据件成功',
+                data: []
+            });
+        });
+    });
+});
+
+//根据类型和id，返回读取的数据信息
+router.get('/findById/:type/:id', function (req, res, next) {
+    var type = req.params.type || "";
+    var id = req.params.id || "";
+    //判断数据完整性
+    if (!type || !id) {
+        return res.send({
+            status: 0,
+            info: '提交的字段不全',
+            data: []
+        });
+    }
+    //1)读取数据信息
+    fs.readFile(PATH + type + ".json", function (err, data) {
+        //读取文件出现异常
+        if (err) {
+            //接口返回数据
+            return res.send({
+                status: 0,
+                info: "读取文件异常",
+                data: []
+            })
+        }
+        //数据信息
+        var arr = JSON.parse(data.toString());
+        //2)调用方法，获取id相关的数据信息
+        var result = _findByIdHandler(arr, id);
+        //3)接口返回数据
+        return res.send({
+            status: 1,
+            info: "查询数据成功",
+            data: result
+        })
     });
 });
 
@@ -230,7 +317,7 @@ function guidGenerate() {
  * @param id 对应的id
  * @returns {*} 返回新的数组
  */
-function removeArrayId(arr, id) {
+function _removeArrayId(arr, id) {
     //TODO 目前这种方式有点二，要全部遍历数组中的每一项
     var result = [];
     for (var i = 0; i < arr.length; i++) {
@@ -239,6 +326,50 @@ function removeArrayId(arr, id) {
         }
     }
     //返回生成的新数组
+    return result;
+}
+
+/**
+ *
+ * @param arr 被修改的数组
+ * @param id 修改数据的id
+ * @param title 修改数据的名称
+ * @param img 修改数据的图片url
+ * @param url 修改数据的文章url
+ * @returns {*} 返回新的数组
+ * @private
+ */
+function _updateItemById(arr, id, title, img, url) {
+    var result = [];
+    //TODO 循环方式有点挫，后续升级再改
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].id === id) {
+            arr[i]["title"] = title;
+            arr[i]["img"] = img;
+            arr[i]["url"] = url;
+            result.push(arr[i]);
+        } else {
+            result.push(arr[i]);
+        }
+    }
+    return result;
+}
+
+/**
+ * 根据id查询数据详情
+ * @param arr 数组
+ * @param id 唯一id
+ * @returns {{}} 数组
+ * @private
+ */
+function _findByIdHandler(arr, id) {
+    var result = null;
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i].id === id) {
+            result = arr[i];
+            break;
+        }
+    }
     return result;
 }
 

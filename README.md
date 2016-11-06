@@ -91,6 +91,8 @@
 ![编辑界面](/service/public/image/edit.png "编辑界面")
 4. 删除操作
 ![删除操作](/service/public/image/delete.png "删除操作")
+4. 修改操作
+![修改操作](/service/public/image/update.png "修改操作")
 5. 查看操作
 ![查看操作](/service/public/image/showImage.png "查看操作")
 
@@ -109,7 +111,7 @@
 4. 使用xshell自带的工具rz(在命令行中输入rz之后回车)，选择下载好的nodejs，进行远程导入，
 5. 使用命令: tar -xzf node-v4.4.4-linux-arm64.tar.gz 进行解压(注:导入进行来的node包，可以选择你知道的路径下面，便于后续查找)
 6. 进入到当前解压node的目录，输入pwd命令，获取当前文件夹的全路径
-7. 使用软连接快速使用命令(其中一个是node，一个是npm):
+7. 使用软连接快速使用命令(其中一个是node，一个是npm)，使用软连接(类似快捷方式):
 ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/node /usr/local/bin/node
 ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 8. 使用npm安装开发中使用express相关的包
@@ -117,6 +119,7 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 10. 使用npm安装pm2，用来启动和查看node相关的服,可参考 <https://segmentfault.com/a/1190000002539204>
 11. 使用命令: pm2 start ./bin/www 启动服务，即可使用外网查看。
 12. 只是大致记录步骤，后续视频完善。
+
 ***
 
 ## 2、app开发
