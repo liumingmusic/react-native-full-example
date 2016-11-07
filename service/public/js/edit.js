@@ -146,7 +146,8 @@ $(function () {
     //获取地址栏信息，判断修改的资源类型
     function _getQueryString() {
         var href = window.location.href;
-        return href.substr(href.lastIndexOf("/") + 1, href.length);
+        var types = href.split("edit/")[1];
+        return types.substr(0, types.lastIndexOf("/"));
     }
 
     //默认调用
