@@ -123,6 +123,7 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 ***
 
 ## 2、app开发
+
 ### 2.1 react native 环境搭建
 
 ### 2.2 文件目录组织
@@ -135,6 +136,7 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 打包jsbundle文件 加载成功便于app加载
 react-native bundle --entey-file index.ios.js --platform ios --dev false --bndle-output main.ios.jsbundle
 
+### 2.6 第三方组件
 
 
 
