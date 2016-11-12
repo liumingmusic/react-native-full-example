@@ -55,11 +55,8 @@ map.plugin('AMap.Geolocation', function () {
 });
 
 //路径规划,使用服务组件
-AMap.service('AMap.Walking', function () {
-    //创建路径对象进行规划
-    walking = new AMap.Walking({
-        map: map
-    });
+walking = new AMap.Riding({
+    map: map
 });
 
 /**
@@ -149,9 +146,7 @@ function _showInfoWindow(info, poi, center) {
     //结束位置
     var end = poi.location;
     //路径规划
-    walking.search(start, end, function (status, result) {
-    }, function (status, result) {
-    });
+    walking.search(start, end);
 }
 
 //关闭弹框

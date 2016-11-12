@@ -123,20 +123,68 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 ***
 
 ## 2、app开发
-
 ### 2.1 react native 环境搭建
+1. 首先和后端express开发一下，安装node(上面操作过就可以忽略)
+2. 使用cnpm安装react-native-cli，命令如下：cnpm install -g react-native-cli
+3. 接下来可以react-native 这个命令初始化项目，命令如下：react-native init toilet（其中toilet为初始化项目的文件夹名称，也就是项目名）
+4. 接下来进入项目路径，cd toilet，执行命令react-native run-ios进行项目启动。这样就可以看见初始化状态下面的项目了
+5. 修改index.ios.js文件，保存。选中模拟器使用快捷键 command+r 进行修改后的刷新
 
 ### 2.2 文件目录组织
+```
+    toilet
+            __tests__                        //测试文件
+            android                          //安卓编译之后的文件
+            common                           //工具类
+                utils.js
+            html                             //静态页面，用webview进行显示
+                css
+                image
+                js
+                nearby.html
+                weather.html
+            ios                              //ios编译之后的文件
+            ios_views                        //ios开发使用的组件，为了区别和andriod
+                read                         //阅读模块所有涉及到的组件
+                    cateagory.js             //分类组件
+                    list.js                  //列表组件
+                    recommend.js             //推荐组件
+                    search.js                //搜索组件
+                    topic.js                 //置顶组件
+                setting                      //设置组件
+                    about.js                 //关于组件
+                    detail.js                //详情组件
+                    tips.js                  //友情提示组件
+                    help.js                  //帮助组件
+                readPage.js                  //阅读模块
+                settingPage.js               //设置模块
+                toiletPage.js                //卫生间模块
+                twebview.js                  //webview组件
+                weatherPage.js               //天气模块
+            node_modules                     //第三方依赖的jar
+            index.ios.js                     //ios开发主程序入口
+            package.json                     //配置文件
+```
 
 ### 2.3 组件关系图
+![app模块关系图](/service/public/image/structure.png "app模块关系图")
 
 ### 2.4 app运行展示
+![首页](/service/public/image/app/1.png "首页") ![阅读](/service/public/image/app/2.png "阅读")
+![阅读详情](/service/public/image/app/3.png "阅读详情") ![天气](/service/public/image/app/4.png "天气")
+![设置](/service/public/image/app/5.png "设置") ![设置详情](/service/public/image/app/6.png "设置详情")
 
 ### 2.5 优化加载
 打包jsbundle文件 加载成功便于app加载
 react-native bundle --entey-file index.ios.js --platform ios --dev false --bndle-output main.ios.jsbundle
 
 ### 2.6 第三方组件
+[react-native-material-design](https://github.com/react-native-material-design/react-native-material-design)
+[react-native-image-picker](https://github.com/marcshilling/react-native-image-picker)
+[react-native-barcodescanner](https://github.com/ideacreation/react-native-barcodescanner)
+[react-native-gifted-chat](https://github.com/FaridSafi/react-native-gifted-chat)
+[fastui-form](https://github.com/roscoe054/fastui-form)
+
 
 
 
