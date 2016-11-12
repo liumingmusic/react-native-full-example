@@ -29,7 +29,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state>
               <first_editor vertical-scroll-proportion="0.5940171">
-                <caret line="179" column="95" selection-start-line="179" selection-start-column="95" selection-end-line="179" selection-end-column="95" />
+                <caret line="179" column="71" selection-start-line="179" selection-start-column="71" selection-end-line="179" selection-end-column="71" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -534,7 +534,13 @@
       <option name="project" value="LOCAL" />
       <updated>1478959573625</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="书写app开发文档">
+      <created>1478959702056</created>
+      <option name="number" value="00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1478959702056</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TodoView">
@@ -979,7 +985,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state>
           <first_editor vertical-scroll-proportion="0.5940171">
-            <caret line="179" column="95" selection-start-line="179" selection-start-column="95" selection-end-line="179" selection-end-column="95" />
+            <caret line="179" column="71" selection-start-line="179" selection-start-column="71" selection-end-line="179" selection-end-column="71" />
             <folding />
           </first_editor>
           <second_editor />
