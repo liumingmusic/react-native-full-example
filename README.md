@@ -170,8 +170,14 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 ![app模块关系图](/service/public/image/structure.png "app模块关系图")
 
 ### 2.4 app运行展示
-<img src="/service/public/image/app/1.png" width = "200" height = "300" align=center />
-<img src="/service/public/image/app/2.png" width = "200" height = "300" align=center />
+<img src="/service/public/image/app/1.png" width = "300" height = "400" align=center style="margin-right:20px"/>
+<img src="/service/public/image/app/2.png" width = "200" height = "300" align=center /><br><br>
+
+<img src="/service/public/image/app/3.png" width = "300" height = "400" align=center style="margin-right:20px"/>
+<img src="/service/public/image/app/4.png" width = "200" height = "300" align=center /><br><br>
+
+<img src="/service/public/image/app/5.png" width = "300" height = "400" align=center style="margin-right:20px"/>
+<img src="/service/public/image/app/6.png" width = "200" height = "300" align=center /><br><br>
 
 ### 2.5 优化加载
 打包jsbundle文件 加载成功便于app加载
