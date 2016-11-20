@@ -77,11 +77,61 @@ class settingView extends Component {
 class settingPage extends Component {
 
     render() {
+        // 导航栏的Mapper
+        var NavigationBarRouteMapper = {
+            // 左键
+            LeftButton(route, navigator, index, navState) {
+                if (index > 0) {
+                    return (
+                        <View style={styles.navContainer}>
+                            <TouchableOpacity
+                                underlayColor='transparent'
+                                onPress={() => {if (index > 0) {navigator.pop()}}}>
+                                <Text style={styles.leftNavButtonText}>
+                                    后退
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    );
+                } else {
+                    return null;
+                }
+            },
+            // 右键
+            RightButton(route, navigator, index, navState) {
+                if (route.onPress)
+                    return (
+                        <View style={styles.navContainer}>
+                            <TouchableOpacity
+                                onPress={() => route.onPress()}>
+                                <Text style={styles.rightNavButtonText}>
+                                    右键
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    );
+            },
+            // 标题
+            Title(route, navigator, index, navState) {
+                return (
+                    <View style={styles.navContainer}>
+                        <Text style={styles.title}>
+                            应用标题
+                        </Text>
+                    </View>
+                );
+            }
+        };
+
         return (
             <Navigator
                 style={{flex:1}}
                 initialRoute={{component: settingView}}
                 configureScene={this.configureScene}
+                /*navigationBar={
+                  <Navigator.NavigationBar
+                    style={styles.navContainer}
+                    routeMapper={NavigationBarRouteMapper}/>}*/
                 renderScene={this.renderScene}/>
         );
     }
@@ -114,7 +164,9 @@ class settingPage extends Component {
 //样式表
 const styles = StyleSheet.create({
     navContainer: {
-        flex: 1
+        flex: 1,
+        height: 30,
+        backgroundColor: 'red'
     },
     leftNavButtonText: {},
     rightNavButtonText: {},

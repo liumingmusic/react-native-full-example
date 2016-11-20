@@ -17,7 +17,7 @@ import TabNavigator from 'react-native-tab-navigator';
 
 //所依赖的模块组件
 import ToiletPage from './ios_views/toiletPage';
-import ReadPage from './ios_views/readPage';
+import ReadPage from './android_view/readPage';
 import WeatherPage from './ios_views/weatherPage';
 import SettingPage from './android_view/settingPage';
 

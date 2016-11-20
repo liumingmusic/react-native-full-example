@@ -3,7 +3,8 @@ import {
     StyleSheet,
     Text,
     View,
-    WebView
+    WebView,
+    Alert
 } from 'react-native';
 
 //webView组件
