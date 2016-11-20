@@ -15,7 +15,8 @@ import TWebView from './twebview';
 class weatherPage extends Component {
 
     render() {
-        const url = "http://localhost:63342/toiletApp/toilet/html/weather.html";
+        //const url = "http://localhost:63342/toiletApp/toilet/html/weather.html";
+        const url = 'http://123.57.39.116:3000/html/weather.html';
         return (
             <View style={styles.container}>
                 <TWebView url={url}/>

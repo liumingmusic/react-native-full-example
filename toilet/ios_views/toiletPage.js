@@ -13,7 +13,8 @@ class toiletPage extends Component {
 
     render() {
         //单独的页面，专门处理地图相关操作
-        var cmapUri = "http://localhost:63342/toiletApp/toilet/html/nearby.html";
+        //var cmapUri = "http://127.0.0.1:63342/toiletApp/toilet/html/nearby.html";
+        var cmapUri = "http://123.57.39.116:3000/html/nearby.html";
         return (
             <View style={styles.container}>
                 <TWebView url={cmapUri}/>

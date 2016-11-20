@@ -15,7 +15,7 @@ class TWebView extends Component {
         this.state = {
             url: this.props.url,
             isError: false,
-            isMargin: this.props.isMargin,
+            isMargin: this.props.isMargin
         }
     }
 
@@ -32,6 +32,10 @@ class TWebView extends Component {
                             startInLoadingState={true}
                             onError={this._showError.bind(this)}
                             source={{uri:this.state.url}}
+                            javaScriptEnabled={true}
+                            domStorageEnabled={true}
+                            startInLoadingState={true}
+                            scalesPageToFit={true}
                             style={{marginTop: this.state.isMargin || -20}}/>
                 }
             </View>
