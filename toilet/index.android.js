@@ -34,7 +34,7 @@ export default class toilet extends Component {
     constructor() {
         super();
         this.state = {
-            selectedTab: 'toiletTab'
+            selectedTab: 'readTab'
         }
     }
 

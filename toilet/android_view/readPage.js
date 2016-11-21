@@ -6,7 +6,8 @@ import {
     ScrollView,
     Navigator,
     RefreshControl,
-    ActivityIndicator
+    ActivityIndicator,
+    TouchableOpacity
 } from 'react-native';
 
 //工具类
@@ -16,7 +17,7 @@ import Uitls from '../common/utils'
 import Category from '../ios_views/read/category';
 import List from '../ios_views/read/list';
 import Recommend from '../ios_views/read/recommend';
-import Search from '../ios_views/read/search';
+import Search from '../android_view/read/search';
 import Topic from '../ios_views/read/topic';
 
 //hr组件，画出一条线
@@ -120,12 +121,62 @@ class readView extends Component {
 //nav 组件，包裹在readview里面，对全部的信息进行路径导航
 class readPage extends Component {
     render() {
+
+        var NavigationBarRouteMapper = {
+            LeftButton: function (route, navigator, index, navState) {
+                if (index > 0) {
+                    return (
+                        <View style={[styles.navContainer,styles.touch]}>
+                            <TouchableOpacity
+                                underlayColor='transparent'
+                                onPress={() => {if (index > 0) {navigator.pop()}}}>
+                                <Text style={styles.leftNavButtonText}>
+                                    返回
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    );
+                }
+            },
+            RightButton: function (route, navigator, index, navState) {
+                //index大于0，表明当前页面可以查看
+                if (index > 0) {
+                    return (
+                        <View style={[styles.navContainer,styles.touch]}>
+                            <TouchableOpacity
+                                onPress={() => route.onPress()}>
+                                <Text style={styles.rightNavButtonText}>
+                                    分享
+                                </Text>
+                            </TouchableOpacity>
+                        </View>
+                    )
+                }
+            },
+            Title: function (route, navigator, index, navState) {
+                var title = route.title || "阅读";
+                return (
+                    <View style={[styles.navContainer,styles.navTitle]}>
+                        <Text style={styles.title} numberOfLines={1}>
+                            {title}
+                        </Text>
+                    </View>
+                );
+            }
+        };
+
         return (
             <Navigator
                 style={{flex:1}}
                 initialRoute={{component: readView}}
                 configureScene={this.configureScene}
-                renderScene={this.renderScene}/>
+                renderScene={this.renderScene}
+                navigationBar={
+                    <Navigator.NavigationBar
+                      routeMapper={NavigationBarRouteMapper}
+                      style={styles.navContainer}
+                   />
+                }/>
         );
     }
 
@@ -158,10 +209,11 @@ class readPage extends Component {
 
 //样式表
 const styles = StyleSheet.create({
-    scrollView: {
-        flex: 1
-    },
     container: {
+        flex: 1,
+        marginTop: 55
+    },
+    scrollView: {
         flex: 1
     },
     text: {
@@ -175,6 +227,45 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 10,
         height: Uitls.pixel
+    },
+    /*导航栏样式控制*/
+    // 页面框架
+    navContainer: {
+        flex: 1,
+        backgroundColor: '#007aff',
+        height: 55
+    },
+    touch: {
+        flex: 1,
+        width: 65
+    },
+    leftNavButtonText: {
+        flex: 1,
+        color: '#ffffff',
+        fontSize: 18,
+        textAlign: 'center',
+        paddingTop: 15
+    },
+    rightNavButtonText: {
+        color: '#ffffff',
+        fontSize: 18,
+        textAlign: "center",
+        paddingTop: 15
+    },
+    navTitle: {
+        marginRight: 72,
+        /*动态计算中间区域的宽度*/
+        width: Uitls.size.width - 145
+    },
+    title: {
+        color: '#fff',
+        textAlign: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        flex: 1,
+        fontSize: 19,
+        paddingTop: 15
     }
 });
 
