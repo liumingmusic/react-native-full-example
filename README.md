@@ -1,4 +1,10 @@
 # 小明找厕所
+## 0 介绍
+1. 支持ios和android两个平台
+2. 下载：git clone https://github.com/liumingmusic/react-native_toiletApp.git
+3. 安装：cd toilet --> npm install --> react-native run-ios(run-android)
+4. 服务端：具体看下面说明
+
 ## 1、express开发
 ### 1.1 npm环境设置
 1. 安装node软件：<https://nodejs.org/en>
@@ -172,7 +178,9 @@ ln -s /home/kun/mysofltware/node-v0.10.28-linux-x64/bin/npm /usr/local/bin/npm
 ### 2.4 app运行展示
 <img src="/service/public/image/app/1.png" width = "270" height = "480"/>   <img src="/service/public/image/app/2.png" width = "270" height = "480"/>   <img src="/service/public/image/app/3.png" width = "270" height = "480"/>
 <img src="/service/public/image/app/4.png" width = "270" height = "480"/>   <img src="/service/public/image/app/5.png" width = "270" height = "480"/>   <img src="/service/public/image/app/6.png" width = "270" height = "480"/>
-
+***
+<img src="/service/public/image/app/android_1.png" width = "270" height = "480"/>   <img src="/service/public/image/app/android_2.png" width = "270" height = "480"/>   <img src="/service/public/image/app/android_3.png" width = "270" height = "480"/>
+<img src="/service/public/image/app/android_4.png" width = "270" height = "480"/>
 ### 2.5 优化加载
 打包jsbundle文件 加载成功便于app加载
 react-native bundle --entey-file index.ios.js --platform ios --dev false --bndle-output main.ios.jsbundle

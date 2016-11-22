@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="568d23b8-3c2c-41c3-8111-6b1ea9b9c1e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/toilet/android_view/setting/about.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/toilet/android_view/setting/detail.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/toilet/android_view/setting/help.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/toilet/android_view/setting/tips.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/index.android.js" afterPath="$PROJECT_DIR$/toilet/index.android.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/android_view/readPage.js" afterPath="$PROJECT_DIR$/toilet/android_view/readPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/android_view/settingPage.js" afterPath="$PROJECT_DIR$/toilet/android_view/settingPage.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/public/image/app/android_1.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/public/image/app/android_2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/public/image/app/android_3.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/service/public/image/app/android_4.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="toiletApp.iws" />
@@ -30,25 +28,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="toiletPage.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/toilet/ios_views/toiletPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34188035">
-              <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.android.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/toilet/index.android.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#19616#19675#0" expanded="false" />
-              </folding>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state>
+              <first_editor vertical-scroll-proportion="0.10683761">
+                <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -103,7 +91,6 @@
         <option value="$PROJECT_DIR$/toilet/ios_views/settingPage.js" />
         <option value="$PROJECT_DIR$/toilet/html/js/nearby.js" />
         <option value="$PROJECT_DIR$/toilet/html/nearby.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/toilet/index.ios.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/weatherPage.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/twebview.js" />
@@ -120,6 +107,7 @@
         <option value="$PROJECT_DIR$/toilet/android_view/setting/help.js" />
         <option value="$PROJECT_DIR$/toilet/index.android.js" />
         <option value="$PROJECT_DIR$/toilet/ios_views/toiletPage.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -215,7 +203,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="toilet" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -229,11 +217,59 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="toilet" />
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="ios_views" />
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="toiletApp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="image" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -275,10 +311,10 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service/public/image/app" />
       <recent name="$PROJECT_DIR$/toilet/android_view" />
       <recent name="$PROJECT_DIR$/toilet/android_view/read" />
       <recent name="$PROJECT_DIR$/toilet/html/image" />
-      <recent name="$PROJECT_DIR$/service/public/image/app" />
       <recent name="$PROJECT_DIR$/service/public/image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -353,12 +389,6 @@
       <created>1476712679648</created>
       <option name="number" value="Default" />
       <updated>1476712679648</updated>
-    </task>
-    <task id="LOCAL-00004" summary="创建webview组件">
-      <created>1476804310373</created>
-      <option name="number" value="00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1476804310373</updated>
     </task>
     <task id="LOCAL-00005" summary="添加高德地图，显示地图控件，添加常用的地图操作按钮">
       <created>1476807233971</created>
@@ -648,7 +678,13 @@
       <option name="project" value="LOCAL" />
       <updated>1479820754733</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="完成android版本">
+      <created>1479824846134</created>
+      <option name="number" value="00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1479824846134</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -664,7 +700,7 @@
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23034154" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.1985703" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32739726" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -699,7 +735,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="地图模块代码优化" />
     <MESSAGE value="完成工具类的书写" />
     <MESSAGE value="阅读模块书写" />
     <MESSAGE value="推荐专题模块书写" />
@@ -724,7 +759,8 @@
     <MESSAGE value="完善&quot;小明找厕所&quot;安卓版本" />
     <MESSAGE value="修复小明找厕所阅读模块android版本" />
     <MESSAGE value="android版本，阅读模块修改完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="android版本，阅读模块修改完成" />
+    <MESSAGE value="完成android版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成android版本" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -842,21 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5555556">
           <caret line="58" column="12" selection-start-line="58" selection-start-column="12" selection-end-line="58" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1923077">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state>
-          <first_editor vertical-scroll-proportion="0.4017094">
-            <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1119,9 +1140,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/toilet/ios_views/toiletPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25641027">
+          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/toilet/index.android.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.36182335">
           <caret line="37" column="9" selection-start-line="37" selection-start-column="9" selection-end-line="37" selection-end-column="9" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
@@ -1130,11 +1159,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/toilet/ios_views/toiletPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34188035">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1923077">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state>
+          <first_editor vertical-scroll-proportion="0.10683761">
+            <caret line="5" column="14" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
