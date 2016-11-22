@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="568d23b8-3c2c-41c3-8111-6b1ea9b9c1e0" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/toilet/main.ios.jsbundle.meta" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/toilet/main.ios.jsbundle" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/toilet/android/app/my-release-key.keystore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/toilet/android/app/build.gradle" afterPath="$PROJECT_DIR$/toilet/android/app/build.gradle" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="toiletApp.iws" />
@@ -296,12 +293,6 @@
       <option name="number" value="Default" />
       <updated>1476712679648</updated>
     </task>
-    <task id="LOCAL-00006" summary="完成地图定位，搜索周边公共厕所的模块">
-      <created>1476892680491</created>
-      <option name="number" value="00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1476892680491</updated>
-    </task>
     <task id="LOCAL-00007" summary="地图模块代码优化">
       <created>1476966956847</created>
       <option name="number" value="00007" />
@@ -590,7 +581,13 @@
       <option name="project" value="LOCAL" />
       <updated>1479825576273</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="打包android，生成apk文件。">
+      <created>1479828747254</created>
+      <option name="number" value="00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1479828747254</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TodoView" selected-index="3">
@@ -641,7 +638,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="完成工具类的书写" />
     <MESSAGE value="阅读模块书写" />
     <MESSAGE value="推荐专题模块书写" />
     <MESSAGE value="热门推荐专题" />
@@ -666,7 +662,8 @@
     <MESSAGE value="修复小明找厕所阅读模块android版本" />
     <MESSAGE value="android版本，阅读模块修改完成" />
     <MESSAGE value="完成android版本" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成android版本" />
+    <MESSAGE value="打包android，生成apk文件。" />
+    <option name="LAST_COMMIT_MESSAGE" value="打包android，生成apk文件。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
