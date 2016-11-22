@@ -61,7 +61,7 @@ class topic extends Component {
             title: name,
             barTintColor: "#fff",
             interactivePopGestureEnabled: true,
-            passProps: {url: url, isMargin: 1}//路由传递数据
+            passProps: {url: url}//路由传递数据
         });
     }
 

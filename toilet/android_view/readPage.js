@@ -14,11 +14,11 @@ import {
 import Uitls from '../common/utils'
 
 //导入自定义组件
-import Category from '../ios_views/read/category';
-import List from '../ios_views/read/list';
-import Recommend from '../ios_views/read/recommend';
+import Category from '../android_view/read/category';
+import List from '../android_view/read/list';
+import Recommend from '../android_view/read/recommend';
 import Search from '../android_view/read/search';
-import Topic from '../ios_views/read/topic';
+import Topic from '../android_view/read/topic';
 
 //hr组件，画出一条线
 class Hr extends Component {
@@ -47,8 +47,6 @@ class readView extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Search navigator={this.props.navigator}/>
-                <Hr/>
                 {
                     this.state.isShow ?
                         <ScrollView
@@ -67,7 +65,7 @@ class readView extends Component {
                             <Category data={this.state.category} navigator={this.props.navigator}/>
                             <Hr/>
                             <Recommend name="轻松一刻" data={this.state.other} navigator={this.props.navigator}/>
-                            <Text style={{height:70}}></Text>
+                            <Text style={{height:30}}></Text>
                         </ScrollView >
                         :
                         (<ActivityIndicator
