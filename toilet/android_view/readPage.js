@@ -14,11 +14,11 @@ import {
 import Uitls from '../common/utils'
 
 //导入自定义组件
-import Category from '../android_view/read/category';
-import List from '../android_view/read/list';
-import Recommend from '../android_view/read/recommend';
-import Search from '../android_view/read/search';
-import Topic from '../android_view/read/topic';
+import Category from './read/category';
+import List from './read/list';
+import Recommend from './read/recommend';
+import Search from './read/search';
+import Topic from './read/topic';
 
 //hr组件，画出一条线
 class Hr extends Component {
@@ -118,8 +118,8 @@ class readView extends Component {
 
 //nav 组件，包裹在readview里面，对全部的信息进行路径导航
 class readPage extends Component {
-    render() {
 
+    render() {
         var NavigationBarRouteMapper = {
             LeftButton: function (route, navigator, index, navState) {
                 if (index > 0) {

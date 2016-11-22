@@ -14,9 +14,9 @@ import {
 //工具类
 import Uitls from '../common/utils';
 //详情模块
-import About from '../ios_views/setting/about';
-import Help from '../ios_views/setting/help';
-import Detail from '../ios_views/setting/detail';
+import About from './setting/about';
+import Help from './setting/help';
+import Detail from './setting/detail';
 
 //设置模块
 class settingView extends Component {
@@ -79,44 +79,42 @@ class settingPage extends Component {
     render() {
         // 导航栏的Mapper
         var NavigationBarRouteMapper = {
-            // 左键
-            LeftButton(route, navigator, index, navState) {
+            LeftButton: function (route, navigator, index, navState) {
                 if (index > 0) {
                     return (
-                        <View style={styles.navContainer}>
+                        <View style={[styles.navContainer,styles.touch]}>
                             <TouchableOpacity
                                 underlayColor='transparent'
                                 onPress={() => {if (index > 0) {navigator.pop()}}}>
                                 <Text style={styles.leftNavButtonText}>
-                                    后退
+                                    返回
                                 </Text>
                             </TouchableOpacity>
                         </View>
                     );
-                } else {
-                    return null;
                 }
             },
-            // 右键
-            RightButton(route, navigator, index, navState) {
-                if (route.onPress)
+            RightButton: function (route, navigator, index, navState) {
+                //index大于0，表明当前页面可以查看
+                if (index > 0) {
                     return (
-                        <View style={styles.navContainer}>
+                        <View style={[styles.navContainer,styles.touch]}>
                             <TouchableOpacity
                                 onPress={() => route.onPress()}>
                                 <Text style={styles.rightNavButtonText}>
-                                    右键
+
                                 </Text>
                             </TouchableOpacity>
                         </View>
-                    );
+                    )
+                }
             },
-            // 标题
-            Title(route, navigator, index, navState) {
+            Title: function (route, navigator, index, navState) {
+                var title = route.title || "设置";
                 return (
-                    <View style={styles.navContainer}>
-                        <Text style={styles.title}>
-                            应用标题
+                    <View style={[styles.navContainer,styles.navTitle]}>
+                        <Text style={styles.title} numberOfLines={1}>
+                            {title}
                         </Text>
                     </View>
                 );
@@ -128,11 +126,13 @@ class settingPage extends Component {
                 style={{flex:1}}
                 initialRoute={{component: settingView}}
                 configureScene={this.configureScene}
-                /*navigationBar={
-                  <Navigator.NavigationBar
-                    style={styles.navContainer}
-                    routeMapper={NavigationBarRouteMapper}/>}*/
-                renderScene={this.renderScene}/>
+                renderScene={this.renderScene}
+                navigationBar={
+                    <Navigator.NavigationBar
+                      routeMapper={NavigationBarRouteMapper}
+                      style={styles.navContainer}
+                   />
+                }/>
         );
     }
 
@@ -143,7 +143,10 @@ class settingPage extends Component {
      * @returns {XML} 页面
      */
     renderScene(route, navigator) {
-        return <route.component navigator={navigator}/>;
+        var url = route.passProps ? route.passProps.url : "";
+        var isMargin = route.passProps ? route.passProps.isMargin : "";
+        //主要作用是传参数
+        return <route.component navigator={navigator} url={url} isMargin={isMargin}/>;
     }
 
     /**
@@ -163,16 +166,10 @@ class settingPage extends Component {
 
 //样式表
 const styles = StyleSheet.create({
-    navContainer: {
-        flex: 1,
-        height: 30,
-        backgroundColor: 'red'
-    },
-    leftNavButtonText: {},
-    rightNavButtonText: {},
     container: {
         paddingLeft: 0,
-        paddingRight: 0
+        paddingRight: 0,
+        marginTop: 55
     },
     image_view: {
         justifyContent: "center",
@@ -204,8 +201,46 @@ const styles = StyleSheet.create({
     icon: {
         width: 88,
         height: 100
+    },
+    /*导航栏样式控制*/
+    // 页面框架
+    navContainer: {
+        flex: 1,
+        backgroundColor: '#007aff',
+        height: 55
+    },
+    touch: {
+        flex: 1,
+        width: 65
+    },
+    leftNavButtonText: {
+        flex: 1,
+        color: '#ffffff',
+        fontSize: 18,
+        textAlign: 'center',
+        paddingTop: 15
+    },
+    rightNavButtonText: {
+        color: '#ffffff',
+        fontSize: 18,
+        textAlign: "center",
+        paddingTop: 15
+    },
+    navTitle: {
+        marginRight: 72,
+        /*动态计算中间区域的宽度*/
+        width: Uitls.size.width - 145
+    },
+    title: {
+        color: '#fff',
+        textAlign: 'center',
+        alignItems: 'center',
+        justifyContent: 'center',
+        fontWeight: 'bold',
+        flex: 1,
+        fontSize: 19,
+        paddingTop: 15
     }
-
 });
 
 module.exports = settingPage;
