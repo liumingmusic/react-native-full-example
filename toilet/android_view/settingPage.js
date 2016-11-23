@@ -8,7 +8,8 @@ import {
     Image,
     ScrollView,
     TouchableOpacity,
-    Alert
+    Alert,
+    StatusBar
 } from 'react-native';
 
 //工具类

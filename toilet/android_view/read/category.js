@@ -3,7 +3,9 @@ import {
     StyleSheet,
     Text,
     View,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform,
+    BackAndroid
 } from 'react-native';
 
 //工具类

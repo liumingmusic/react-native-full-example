@@ -7,7 +7,10 @@ import {
     Navigator,
     RefreshControl,
     ActivityIndicator,
-    TouchableOpacity
+    TouchableOpacity,
+    StatusBar,
+    Platform,
+    BackAndroid
 } from 'react-native';
 
 //工具类
@@ -47,6 +50,9 @@ class readView extends Component {
     render() {
         return (
             <View style={styles.container}>
+                <StatusBar
+                    backgroundColor="#007aff"
+                    barStyle="light-content"/>
                 {
                     this.state.isShow ?
                         <ScrollView
@@ -110,10 +116,6 @@ class readView extends Component {
         })
     }
 
-    //组件加载完毕时候调用 TODO fatch数据
-    componentDidMount() {
-        this._fetchData();
-    }
 }
 
 //nav 组件，包裹在readview里面，对全部的信息进行路径导航
@@ -138,13 +140,14 @@ class readPage extends Component {
             },
             RightButton: function (route, navigator, index, navState) {
                 //index大于0，表明当前页面可以查看
+                var name = navigator.getCurrentRoutes()[1];
                 if (index > 0) {
                     return (
                         <View style={[styles.navContainer,styles.touch]}>
                             <TouchableOpacity
                                 onPress={() => route.onPress()}>
                                 <Text style={styles.rightNavButtonText}>
-                                    分享
+
                                 </Text>
                             </TouchableOpacity>
                         </View>
