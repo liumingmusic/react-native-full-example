@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>后台管理</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" type="text/css" href="/js/lib/bootstrap3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/edit.css"/>
+    <link rel="stylesheet" href="/css/config.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <!-- 导航条 -->
+    <nav class="navbar navbar-inverse" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">后台管理系统</a>
+                <span class="header_user">欢迎你, admin</span>
+                <span class="header_exit"><a href="/exit">安全退出</a></span>
+            </div>
+        </div>
+    </nav>
+    <!--路径导航-->
+    <ol class="breadcrumb">
+        <li><a href="#">当前位置: </a></li>
+        <li><a href="/">首页</a></li>
+        <li class="active"><%= name %></li>
+    </ol>
+    <!--具体的表单信息-->
+    <div class="panel">
+        <div class="row">
+            <div class="col-xs-12">专题推荐</div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">专题一标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">专题一图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">专题一链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">专题二标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">专题二图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">专题二链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="row">
+            <div class="col-xs-12">热门推荐</div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">热门一标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门一图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门一链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">热门二标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门二图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门二链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">热门三标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门三图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门三链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">热门四标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门四图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门四链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">热门五标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门五图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门五链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">热门六标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门六图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门六链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">热门七标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门七图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门七链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">热门八标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门八图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">热门八链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="row">
+            <div class="col-xs-12">分类</div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">分类一标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">分类二标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">分类三标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">分类四标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="row">
+            <div class="col-xs-12">轻松一刻</div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">轻松一标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松一图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松一链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">轻松二标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松二图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松二链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">轻松三标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松三图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松三链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">轻松四标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松四图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松四链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">轻松五标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松五图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松五链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">轻松六标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松六图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松六链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">轻松七标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松七图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松七链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+        <div class="block-row">
+            <div class="row">
+                <div class="col-xs-2">轻松八标题</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松八图片</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+            <div class="row">
+                <div class="col-xs-2">轻松八链接</div>
+                <div class="col-xs-10"><input type="text" class="form-control"/></div>
+            </div>
+        </div>
+    </div>
+    <div class="panel">
+        <div class="row">
+            <div class="col-xs-10 col-xs-offset-1">
+                <input type="submit" class="btn btn-success btn-block" value="设置配置信息"/>
+            </div>
+        </div>
+    </div>
+    <!--js类库和业务相关-->
+    <script type="text/javascript" src="/js/jquery-2.2.3.min.js"></script>
+    <script src="/js/lib/bootstrap3.3.0/js/bootstrap.min.js"></script>
+</div>
+</body>
+</html>

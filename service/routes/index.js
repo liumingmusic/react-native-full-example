@@ -32,7 +32,9 @@ router.get('/exit', function (req, res, next) {
 //阅读模块配置接噢耶
 router.get('/config', function (req, res, next) {
     checkSessionUser(req, res);
-    res.render('tuijian', {});
+    res.render('config', {
+        name: "配置管理"
+    });
 });
 
 //编辑路由制定
@@ -45,7 +47,7 @@ router.get('/edit/:type/:page', function (req, res, next) {
     if (type) {
         var obj = {};
         //判断请求是否在指定的路由里面
-        var urlContain = ["prose", "it", "manager", "cookies"];
+        var urlContain = ["prose", "it", "manager", "cookies", "config"];
         var name = _isArray(urlContain, type);
         if (!name) {
             //参数有问题
@@ -101,7 +103,7 @@ router.get('/edit/:type/:page', function (req, res, next) {
  * @private
  */
 function _isArray(array, item) {
-    var bread = ["散文", "互联网质询", "管理", "开心一刻"];
+    var bread = ["散文", "互联网质询", "管理", "开心一刻", "配置管理"];
     var name = "";
     for (var i = 0; i < array.length; i++) {
         if (array[i] === item) {

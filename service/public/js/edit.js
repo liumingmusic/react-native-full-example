@@ -9,7 +9,6 @@ $(function () {
         //编辑、删除按钮绑定事件
         $(".deleteHandler").bind("click", _delete);
         $(".updateHandler").bind("click", _update);
-
     }
 
     //具体的执行方法

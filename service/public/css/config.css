@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+.panel {
+    width: 600px;
+    margin: 0 auto;
+}
+
+.block-row .row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.block-row div[class=col-xs-2] {
+    line-height: 34px;
+    text-align: right;
+    padding: 0;
+}
+
+.block-row {
+    border-left: 10px solid #cccccc;
+}
+
+.panel > .row > div[class=col-xs-12] {
+    font-size: 20px;
+    padding: 0;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
