@@ -1,3 +1,6 @@
+## 关注微信公众号，获取更多资源
+![](/service/public/image/it_cloud.png)
+
 # 小明找厕所
 ## 0 介绍
 1. 支持ios和android两个平台
